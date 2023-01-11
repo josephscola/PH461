@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Méthodologie de la programmation en C, A. Braquelaire &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-ufr-sciences.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PH461 : Python pour la Physique
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/biblio/braquelaire2005.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbiblio/braquelaire2005.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/biblio/braquelaire2005.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs-de-la-modularite">
+   Objectifs de la modularité :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principes-fondamentaux-de-la-modularite">
+   Principes fondamentaux de la modularité
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstraction-des-litteraux">
+     1. “Abstraction des littéraux”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facorisation-du-code">
+     2. “Facorisation du code”
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-1-representation-d-un-nombre-complexe">
+       Exemple 1 : représentation d’un nombre complexe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-2-representation-d-un-resultat-de-mesure">
+       Exemple 2 : représentation d’un résultat de mesure
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Méthodologie de la programmation en C, A. Braquelaire</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs-de-la-modularite">
+   Objectifs de la modularité :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principes-fondamentaux-de-la-modularite">
+   Principes fondamentaux de la modularité
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstraction-des-litteraux">
+     1. “Abstraction des littéraux”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facorisation-du-code">
+     2. “Facorisation du code”
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-1-representation-d-un-nombre-complexe">
+       Exemple 1 : représentation d’un nombre complexe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-2-representation-d-un-resultat-de-mesure">
+       Exemple 2 : représentation d’un résultat de mesure
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="methodologie-de-la-programmation-en-c-a-braquelaire">
+<h1>Méthodologie de la programmation en C, A. Braquelaire<a class="headerlink" href="#methodologie-de-la-programmation-en-c-a-braquelaire" title="Permalink to this headline">#</a></h1>
+<p>Notes sur le chapitre 8 : modulariasation des programmes C</p>
+<section id="objectifs-de-la-modularite">
+<h2>Objectifs de la modularité :<a class="headerlink" href="#objectifs-de-la-modularite" title="Permalink to this headline">#</a></h2>
+<p>A. Braquelaire définit les cinq objectifs suivants :</p>
+<ol class="simple">
+<li><p><strong>Lisibilité</strong> : facilité à comprendre le comportement et la mise en œuvre d’un programme à partir de son code source.</p></li>
+<li><p><strong>Maintenabilité</strong> : facilité à détecter des fautes de programmation et à les corriger sans en introduire de nouvelles.</p></li>
+<li><p><strong>Portabilité</strong> : facilité à adapter toutes les fonctionnalités d’un logiciel à un nouvel environnement.</p></li>
+<li><p><strong>Extensibilité</strong> : ossibilité de modifier l’implémentation d’une partie du programme ou de lui ajouter des fonctionnalités sans que cela ne modilie le comportement de l’ensemble.</p></li>
+<li><p><strong>Réutilisabilité</strong> : possibilité d’assembler entre eux plusieurs portions de programme, écrites à des époques et pour des applications différentes, sans qu’aucune d’entre elles ne perturbe le comportement des autres.</p></li>
+</ol>
+<p>Il s’agit donc de regrouper les fonctionnalités concourrant à un même traitement.
+Il existe 2 approches de regroupement qui s’opposent</p>
+<ul class="simple">
+<li><p>“dirigée par le contrôle” : approche fonctionnelle “descendante incompatibie avec la réutilisabilité et l’extensibilité</p></li>
+<li><p>“dirigée par les données” : approche ascendante favorable à la construction de composants logiciels autonomes (voir prog. par objet).</p></li>
+</ul>
+<p>Si on décline  ces approches dans le contexte du PH461 qui vise au développement d’outils d’analyse de données expérimentales, apparaissent les options suivantes.
+Partant du constat que des données doivent être lues, traitées puis représentées graphiquement,
+la <em>méthode descendante</em> consisterait à développer des fonctions de représentation pour chaque type de données en incluant les traitements associés aux différents cas de figure.
+Ainsi, les <span class="math notranslate nohighlight">\(X(t)\)</span> d’une acquisition temporelle pourraient très bien se trouvées dans un format différent (une liste par exemple) de celles d’une acquisition en fonction de la température <span class="math notranslate nohighlight">\(X(T)\)</span> (qui aurait le type d’un dictionnaire).
+Cela rendrait nécessaire d’écrire deux versions des fonctions de traitements et de représentation alors même que les opérations seraient communes à n’importe quelle fonction d’une seule variable <span class="math notranslate nohighlight">\(f(x)\)</span>.
+A l’inverse la <em>méthode ascendante</em> impliquerait de commencer par développer pour chaque origine de données (et donc chaque format de fichier de données) une fonction qui chargerait les données en mémoire dans un format particulier et toutes les fonctions de traitement seraient compatibles avec ce format (par exemple des listes).</p>
+</section>
+<section id="principes-fondamentaux-de-la-modularite">
+<h2>Principes fondamentaux de la modularité<a class="headerlink" href="#principes-fondamentaux-de-la-modularite" title="Permalink to this headline">#</a></h2>
+<section id="abstraction-des-litteraux">
+<h3>1. “Abstraction des littéraux”<a class="headerlink" href="#abstraction-des-litteraux" title="Permalink to this headline">#</a></h3>
+<p>Toute grandeur constante dans un programme donné est susceptible de prendre une autre valeur dans une réutilisation future.
+L’<em>abstraction des littéraux</em> consiste à déclarer une variable pour toutes les constantes d’un programme.</p>
+<ul class="simple">
+<li><p>exemple 1</p></li>
+</ul>
+<p><span style="color:red">mauvaise pratique :</span>
+<code> <pre> annee_complete = 1900 + annee </pre></code>
+<span style="color:green">bonne pratique :</span>
+<code> <pre>annee0 = 1900
+annee_complete = 1900 + annee </pre></code></p>
+<ul class="simple">
+<li><p>exemple 2</p></li>
+</ul>
+<p><span style="color:red">mauvaise pratique :</span>
+<code> <pre> open (‘/home/mon_repertoire/mon_fichier.dat’) </pre></code>
+<span style="color:green">bonne pratique :</span>
+<code><pre>path = ‘/home/mon_repertoire/’
+file = ‘mon_fichier.dat’
+open (path + file)</pre></code></p>
+</section>
+<section id="facorisation-du-code">
+<h3>2. “Facorisation du code”<a class="headerlink" href="#facorisation-du-code" title="Permalink to this headline">#</a></h3>
+<p>Le but est d’éviter les duplications de code qui entrave la <em>maintenabilité</em> et l’<em>extensibilité</em> puisque les corrections et les adaptations doivent être autant dupliquées que le code se trouve l’être.</p>
+<section id="exemple-1-representation-d-un-nombre-complexe">
+<h4>Exemple 1 : représentation d’un nombre complexe<a class="headerlink" href="#exemple-1-representation-d-un-nombre-complexe" title="Permalink to this headline">#</a></h4>
+<p>On souhaite afficher un nombre complexe sous sa forme cartésiène :
+$<span class="math notranslate nohighlight">\( z =  1 + 2i \)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">i&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">i&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imaginons que dans un autre contexte, il soit nécessaire de remplacer le symbole <span class="math notranslate nohighlight">\(i\)</span> du nombre imaginaire par <span class="math notranslate nohighlight">\(j\)</span>, il faudrait modifier toutes les instructions d’affichage.
+Pour éviter cela, la chaîne de caractère à afficher doit être définie dans une fonction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_complexe</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">symbol</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">affiche_complexe</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">affiche_complexe</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">affiche_complexe</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;◎&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 + 2.0i
+1.0 + 2.0j
+1.0 + 2.0◎
+</pre></div>
+</div>
+</div>
+</div>
+<p><blockcquote>On considérera qu’il y a duplication de code chaque fois qu’une modifiation doit être répercuytée en plusieurs endroits différents du programme. Les fonctions doivent être systématiquement employées pour éviter la duplication de code, même dans le cas où la duplucation se limite à une seule instruction. Si cela s’avère nécessaire, il ne faut pas craidre de définir une multitude de fonctions de petite tailles.</blockcquote></p>
+</section>
+<section id="exemple-2-representation-d-un-resultat-de-mesure">
+<h4>Exemple 2 : représentation d’un résultat de mesure<a class="headerlink" href="#exemple-2-representation-d-un-resultat-de-mesure" title="Permalink to this headline">#</a></h4>
+<p>Le résultat d’une expérience se représente dans la notation scientifique et associe la valeur moyenne de la mesure, l’incertitude de mesure et l’unité de la grandeur mesurée :
+$<span class="math notranslate nohighlight">\( X = (1.234 \pm 0.056)\cdot 10 ^{-6} \quad \mathrm{m}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># données expérimentales</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mf">1.234e-6</span>
+<span class="n">Delta_X</span> <span class="o">=</span> <span class="mf">0.056e-6</span>
+<span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span>
+
+<span class="c1"># affichage du résultat de mesure </span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6</span>
+<span class="n">odg</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">exp</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X = (</span><span class="si">{</span><span class="n">X</span><span class="o">/</span><span class="n">odg</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> ± </span><span class="si">{</span><span class="n">Delta_X</span><span class="o">/</span><span class="n">odg</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">) 10^(</span><span class="si">{</span><span class="n">exp</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1">) &#39;</span> <span class="o">+</span> <span class="n">unit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = (1.234 ± 0.056) 10^(-6) m
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette manière de faire est fonctionnelle mais ne respecte pas les principes de modularité.
+Si dans un usage ultérieur, on souhaitait représenter un résultat ayant un chiffre significatif supplémentaire :
+$<span class="math notranslate nohighlight">\( Y = (1.2345 \pm 0.0056)\cdot 10 ^{-6} \quad \mathrm{m},\)</span>$
+il serait nécessaire de dupliquer le code et de modifier le format d’affichage des variables réelles, en plus du nom de la grandeur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># données expérimentales</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mf">1.2345e-6</span>
+<span class="n">Delta_Y</span> <span class="o">=</span> <span class="mf">0.0056e-6</span>
+<span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span>
+
+<span class="c1"># affichage du résultat de mesure </span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6</span>
+<span class="n">odg</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">exp</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Y = (</span><span class="si">{</span><span class="n">Y</span><span class="o">/</span><span class="n">odg</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> ± </span><span class="si">{</span><span class="n">Delta_Y</span><span class="o">/</span><span class="n">odg</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">) 10^(</span><span class="si">{</span><span class="n">exp</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1">) &#39;</span> <span class="o">+</span> <span class="n">unit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Y = (1.2345 ± 0.0056) 10^(-6) m
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour éviter cela, et rendre possible l’application du code pour des contextes variés, la décomposition du travail en fonctions et sous-fonctions est nécessaire.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">ordre_de_grandeur</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># retourne l&#39;ordre de grandeur de x</span>
+    <span class="k">return</span> <span class="nb">int</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span> <span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">ordre_de_l_erreur</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>    
+    <span class="c1"># recherche l&#39;ordre de grandeur du plus petit chiffre significatif de l&#39;erreur</span>
+    <span class="n">odgerr</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">err</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span> <span class="p">(</span><span class="n">err</span><span class="p">))</span> <span class="p">:</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">err</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">odgerr</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">debug</span> <span class="p">:</span> <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;err = &#39;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">debug</span> <span class="p">:</span> <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;odgerr = &#39;</span><span class="p">,</span> <span class="n">odgerr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">odgerr</span>
+
+<span class="k">def</span> <span class="nf">represente_resultat_mesure</span> <span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">odg</span> <span class="o">=</span> <span class="n">ordre_de_grandeur</span> <span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;odg = &#39;</span><span class="p">,</span> <span class="n">odg</span><span class="p">)</span>
+    <span class="n">odgerr</span> <span class="o">=</span> <span class="n">ordre_de_l_erreur</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;odgerr = &#39;</span><span class="p">,</span> <span class="n">odgerr</span><span class="p">)</span>
+    <span class="n">nb_de_decimales</span> <span class="o">=</span> <span class="n">odg</span> <span class="o">-</span> <span class="n">odgerr</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">print</span> <span class="p">(</span><span class="n">nb_de_decimales</span><span class="p">)</span>
+    <span class="n">val_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">val</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="n">odg</span><span class="si">:</span><span class="s1">.</span><span class="si">{</span><span class="n">nb_de_decimales</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">err_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">err</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="n">odg</span><span class="si">:</span><span class="s1">.</span><span class="si">{</span><span class="n">nb_de_decimales</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">res_string</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">val_string</span> <span class="o">+</span> <span class="s1">&#39; ± &#39;</span> <span class="o">+</span> <span class="n">err_string</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;)⋅1e</span><span class="si">{</span><span class="n">odg</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> &#39;</span> <span class="o">+</span> <span class="n">unit</span>
+    <span class="k">return</span> <span class="n">res_string</span>
+
+<span class="c1"># Script appelant les fonctions</span>
+<span class="n">val</span> <span class="o">=</span> <span class="mf">1.123456e-6</span>
+<span class="n">err</span> <span class="o">=</span> <span class="mf">0.0056e-6</span>
+<span class="n">resultat_mesure</span> <span class="o">=</span> <span class="n">represente_resultat_mesure</span> <span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;X = &#39;</span> <span class="o">+</span> <span class="n">resultat_mesure</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = (1.1235 ± 0.0056)⋅1e-6 m
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./biblio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
