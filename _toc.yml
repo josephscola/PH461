@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: chapitre1/algorithmique_syntaxe
+  sections:
+  - file: chapitre1/variables
+  - file: chapitre1/structures
+  - file: chapitre1/autres_types
+  - file: chapitre1/flux_d_instructions
+- file: chapitre2/guide_du_codage
+  sections:
+  - file: chapitre2/fonctions
+  - file: chapitre2/classes
+  - file: chapitre2/modules
+  - file: chapitre2/programmation_modulaire
+  - file: chapitre2/structurer_son_programme
+  - file: chapitre2/bonnes_pratiques_du_codage

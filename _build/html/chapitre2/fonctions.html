@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fonctions &#8212; Python pour la Physique</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classes" href="classes.html" />
+    <link rel="prev" title="Guide du codage" href="guide_du_codage.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-ufr-sciences.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python pour la Physique</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PH461 : Python pour la Physique
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">
+   Algorithmique et syntaxe python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapitre1/structures.html">
+     Types de variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapitre1/autres_types.html">
+     Autre types de variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapitre1/flux_d_instructions.html">
+     Flux d’instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="guide_du_codage.html">
+   Guide du codage
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="classes.html">
+     Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="programmation_modulaire.html">
+     Programmation modulaire
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="structurer_son_programme.html">
+     Structurer son programme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bonnes_pratiques_du_codage.html">
+     Bonnes pratiques du codage
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapitre2/fonctions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapitre2/fonctions.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapitre2/fonctions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">
+   Arguments d’une procédure ou d’une fonction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure-ou-fonction">
+   Procédure ou fonction ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#premieres-fonctions">
+   Premières fonctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-locales-et-variables-globales">
+   Variables locales et variables globales
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fonctions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">
+   Arguments d’une procédure ou d’une fonction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure-ou-fonction">
+   Procédure ou fonction ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#premieres-fonctions">
+   Premières fonctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-locales-et-variables-globales">
+   Variables locales et variables globales
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="fonctions">
+<h1>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">#</a></h1>
+<p>Un des enjeux de la programmation est la décomposition d’une procédure complexe en une cascade de sous-procédures de plus en plus simples.
+On appelle parfois ces sous-procédures des <em>routines</em> du fait qu’elles sont tellement élémentaires que l’on fait régulièrement appelle à elles.</p>
+<p>Par exemple :
+La procédure “<strong>Se lever le matin</strong>” peut se décomposer de la façon suivante :</p>
+<ul class="simple">
+<li><p><strong>definition</strong> de <strong>Se lever le matin</strong> :</p>
+<ul>
+<li><p><strong>Initialiser</strong> le processeur</p></li>
+<li><p>heure_courante = <strong>Lecture</strong> de l’affichage du réveil</p></li>
+<li><p><strong>Si</strong> heure_courante &lt; heure_de_se_lever : <strong>Ne rien faire</strong></p></li>
+<li><p><strong>Sinon</strong> :</p></li>
+<li><p><strong>Si</strong> <em>soi</em> est recouvert d’une couverture:</p>
+<ul>
+<li><p><strong>Retrait</strong> de la couverture</p></li>
+</ul>
+</li>
+<li><p><strong>Fin bloc si</strong></p></li>
+<li><p><strong>Se redresser</strong></p></li>
+<li><p>pied_a_bouger = <strong>Identifier</strong> le pied le plus proche du bord du lit</p></li>
+<li><p><strong>Poser par terre</strong> pied_a_bouger</p></li>
+<li><p><strong>Poser par terre</strong> ensemble_des_pieds - pied_a_bouger</p></li>
+<li><p><strong>Contrôle de stabilité bipédique</strong></p></li>
+<li><p><strong>Atteindre la station bipédique</strong></p></li>
+<li><p><strong>Fin de la procédure</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>Chaque instruction peut être elle aussi une procédure ou une fonction. Par exemple :</p>
+<blockquote>
+<div><p><strong>definition</strong> de <strong>Lecture</strong> (chose_a_lire) :</p>
+<blockquote>
+<div><p><strong>Si</strong> les yeux sont fermés :<strong>Ouvrir les yeux</strong><br />
+<strong>Localisation</strong> de la position relative de chose_a_lire <br />
+heure_lue = <strong>Lecture</strong> d’une chaîne de caractère au format “hh : mm”<br />
+<strong>Retourne</strong> heure_lue<br />
+<strong>Fin de la fonction</strong></p>
+</div></blockquote>
+</div></blockquote>
+<section id="arguments-d-une-procedure-ou-d-une-fonction">
+<h2>Arguments d’une procédure ou d’une fonction<a class="headerlink" href="#arguments-d-une-procedure-ou-d-une-fonction" title="Permalink to this headline">#</a></h2>
+<p>Ces procédures font intervenir des paramètres qui permettent de tenir compte du contexte d’exécution.
+Ces paramètres sont appelés les <em>arguments</em> de la procédure.</p>
+</section>
+<section id="procedure-ou-fonction">
+<h2>Procédure ou fonction ?<a class="headerlink" href="#procedure-ou-fonction" title="Permalink to this headline">#</a></h2>
+<p><em>Remarque</em> : certains langages de programmation distinguent les <em>fonctions</em> des <em>procédures</em> suivant qu’une variable est retournée ou non.<br />
+Python rassemble les deux sous le nom de <em>fonction</em> et propose une type de variable vide pour marquer l’absence de valeur retournées par une <em>procédure</em>.</p>
+<ul class="simple">
+<li><p><em>Procédure</em> : séquence d’instructions paramétrées par à des arguments et retournant une variable de type <strong>None</strong>.</p></li>
+<li><p><em>Fonction</em> : séquence d’instructions paramétrées par à des arguments et retournant une ou plusieurs variable de tout type (sauf None).</p></li>
+</ul>
+<p>Attention, un même programme peut être découpé de nombreuses façons différentes.
+C’est précisément dans cette décomposition que réside la valeur ajoutée de l’auteur·rice du programme.
+Les critères présidant à ces choix incluent</p>
+<ul class="simple">
+<li><p>la consommation en ressources (processeur, mémoire),</p></li>
+<li><p>le temps de développement,</p></li>
+<li><p>la lisibilité du code</p></li>
+<li><p>le degré de modularité (partage, extension, …) du code.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Syntaxe Python d&#39;une fonction</span>
+<span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="n">argument3</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">instruction1</span>
+    <span class="n">instruction2</span>
+    <span class="n">instruction3</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</section>
+<section id="premieres-fonctions">
+<h2>Premières fonctions<a class="headerlink" href="#premieres-fonctions" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="k">def</span> <span class="nf">printcoucou</span> <span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appel des fonctions</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">new_var</span> <span class="o">=</span> <span class="n">incrementor</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">new_var</span><span class="p">)</span>
+<span class="n">printcoucou</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+Coucou
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ces deux fonctions illustrent un principe important de la programmation :</p>
+<blockquote>
+<div><p><span style="color:red"><strong>Ce n’est pas parce qu’une fonction renvoit un résultat qu’elle sert à quelque chose.</strong> </span></p>
+</div></blockquote>
+</section>
+<section id="variables-locales-et-variables-globales">
+<h2>Variables locales et variables globales<a class="headerlink" href="#variables-locales-et-variables-globales" title="Permalink to this headline">#</a></h2>
+<p>Les variables d’une fonctions sont locales et sont indépendantes des variables du programme appelant la fonction.
+Elle peuvent porter le même nom et rester distinctes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplicator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># les variables de la fonction portent le même nom que dans le programme appelant</span>
+    <span class="n">x1</span> <span class="o">*=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
+    <span class="k">return</span> <span class="n">x1</span>
+
+<span class="n">xx1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">multiplicator</span> <span class="p">(</span><span class="n">xx1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 = &#39;</span><span class="p">,</span> <span class="n">xx1</span><span class="p">)</span> <span class="c1"># la variable x1 n&#39;est pas modifiée par l&#39;exécution de la fonction</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x3 = &#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 =  2
+x3 =  6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il en va de même pour les tuples qui sont des conteneurs non modifiables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concatenator_t</span> <span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">t1</span> <span class="o">+=</span> <span class="n">t2</span> <span class="c1">#la variable locale x1 est modifiée</span>
+    <span class="k">return</span> <span class="n">t1</span>
+
+<span class="n">tuple1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">tuple2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">tuple3</span> <span class="o">=</span> <span class="n">concatenator_t</span> <span class="p">(</span><span class="n">tuple1</span><span class="p">,</span> <span class="n">tuple2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;tuple1: &#39;</span><span class="p">,</span> <span class="n">tuple1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;tuple3: &#39;</span><span class="p">,</span> <span class="n">tuple3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple1:  (1, 2, 3)
+tuple3:  (1, 2, 3, 4, 5, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsque des listes, conteneurs modifiables, sont passées en argument d’une fonction, elles ne sont pas dupliquées lors de l’exécution de la fonction.
+Par conséquent, les modifications d’une liste dans une fonction affecte la liste dans le programme principale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concatenator_l</span> <span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># l1 et l2 sont les nouveaux noms sous lesquels la fonction accède aux listes</span>
+    <span class="n">l1</span> <span class="o">+=</span> <span class="n">l2</span> <span class="c1">#la modification de l1 affecte liste1</span>
+    <span class="k">return</span> <span class="n">l1</span>
+
+<span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">liste3</span> <span class="o">=</span> <span class="n">concatenator_l</span> <span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;liste1: &#39;</span><span class="p">,</span> <span class="n">liste1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;liste3: &#39;</span><span class="p">,</span> <span class="n">liste3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>liste1:  [1, 2, 3, 4, 5, 6]
+liste3:  [1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapitre2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="guide_du_codage.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Guide du codage</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="classes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
