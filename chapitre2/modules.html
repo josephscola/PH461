@@ -125,6 +125,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../chapitre1/variables.html">
+     Variables numériques
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../chapitre1/structures.html">
      Types de variables
     </a>
@@ -242,7 +247,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapitre2/modules.ipynb"
+        <a href="https://mybinder.org/v2/gh/josephscola/PH461/gh-pages/?urlpath=lab/tree/chapitre2/modules.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -256,6 +261,24 @@ title="Launch on Binder"
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -285,7 +308,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/josephscola/PH461"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -302,7 +325,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapitre2/modules.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre2/modules.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -488,8 +511,8 @@ En conséquence, si une fonction a déjà été écrite, il est très fortement 
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "josephscola/PH461",
+            ref: "gh-pages/",
         },
         codeMirrorConfig: {
             theme: "abcdef",
