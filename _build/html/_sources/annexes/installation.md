@@ -26,5 +26,5 @@ Pour ce cours, il n'est donc pas indispensable d'installer Python sur son propre
 Voir la [documentation en ligne](https://docs.anaconda.com/anaconda/install/mac-os/)
 
 # Installation sous Windows :
-Voir la [procédure](Installation_Python_Windows.pdf)
+Voir la [procédure](https://josephscola.github.io/PH461/annexes/Installation_Python_Windows.pdf)
 
