@@ -1,7 +1,5 @@
 # PH461 : Python pour la Physique
-J. Scola joseph.scola@uvsq.fr
-& 
-R. Modolo ronan.modolo@latmos.ipsl.fr
+J. Scola, joseph.scola@uvsq.fr
 
 Année universitaire 2022-2023
 
