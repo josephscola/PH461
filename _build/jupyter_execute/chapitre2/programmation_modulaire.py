@@ -116,14 +116,19 @@ print (f'Y = ({Y/odg:.4f} ± {Delta_Y/odg:.4f}) 10^({exp:d}) ' + unit)
 # Pour éviter cela, et rendre possible l'application du code pour des contextes variés, la décomposition du travail en fonctions et sous-fonctions est nécessaire.
 
 # ### 3. "Masquage de l'implémentation"
-# Les fonctions et sous-fonctions d'un projet doivent être conçues de telle sorte qu'elles puissent être appelées à plusieurs endroits du code et par des fonctions à différents niveaux hierarchiques (_e.g._ à la fois par une sous-fonction et une sous-sous-fonction).
-# Autrement dit, les traitements opérés par une fonction ne doivent pas avoir de répercussions dans le reste du programme, en dehors du résultat fourni en sortie.
+# Les fonctions et sous-fonctions d'un projet doivent être conçues de telle sorte qu'elles puissent être appelées à plusieurs endroits du code et par des fonctions à **différents niveaux hierarchiques** (_e.g._ à la fois par une sous-fonction et une sous-sous-fonction).
+# Autrement dit, les traitements opérés par une fonction ne doivent pas avoir de **répercussions dans le reste du programme**, en dehors du résultat fourni en sortie.
 # Il ne doit pas être nécessaire de connaître la façon dont le traitement est mené, _i.e._ l'implémentation de la fonction, pour utiliser la fonction.
 # C'est le sens du terme de _masquage d'implémentation_
-# 
-# <div class="alert alert-block alert-success">
+
+# ![](./prog_struct_4.png)
+
+# <div class="alert alert-block alert-info">
 # <b>Conséquence pratique n°1 :</b> La totalité des information transitant du programme appelant à la fonction doit passer par les arguments de la fonction.
 # </div>
-# <div class="alert alert-block alert-success">
-# <b>Conséquence pratique n°2 :</b> Les fonctions ne doivent traiter que des variables locales (sauf cas de force majeur)
+# <div class="alert alert-block alert-info">
+# <b>Conséquence pratique n°2 :</b> Les fonctions ne doivent traiter que des variables locales (sauf cas exceptionnel de force majeure).
+# </div>
+# <div class="alert alert-block alert-info">
+# <b>Conséquence pratique n°3 :</b> Si un appel de fonction marqué d'un sens interdit s'avère nécessaire, cela signifie qu'une fonction doit être écrite à un niveau inférieur (ou intermédiaire).
 # </div>

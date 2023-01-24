@@ -54,6 +54,7 @@ print ('le nombre d\'octets alloué à x est : ', x.__sizeof__()) # la nouvelle 
 # Python ajuste automatiquement la longueur du _mot_ binaire en fonction du nombre à représenter.
 
 # Pour une longueur de mot, on distingue deux types d'entiers suivant que le _bit de poids fort_ ($2^7$ pour le mot de 8 bits de l'exemple) est remplacé ou non par un _bit de signe_.
+# 
 # $$ 
 # (10010100)_2 = (-1)^1 \times (
 #                0\cdot 2^6 +  
@@ -74,7 +75,9 @@ print ('le nombre d\'octets alloué à x est : ', x.__sizeof__()) # la nouvelle 
 # - le _bit de signe_ $s$,
 # - un entier non signé _mantisse_ $m$,
 # - un entier signé (ou relatif) l'_exposant_ $n$.
-# Tout _réel machine_ $x$ est représenté par $$ x = (-1)^s \cdot m\cdot 10^n $$
+# Tout _réel machine_ $x$ est représenté par 
+# 
+# $$ x = (-1)^s \cdot m\cdot 10^n $$
 
 # In[3]:
 
@@ -92,7 +95,7 @@ print ('y2 - y = ', y2 - y)
 print ('le nombre d\'octets allouées à y est : ', y2.__sizeof__())
 
 
-# <span style="color:red"> <b> ATTENTION : les réels démunis de représentations machine sont ARRONDIS !!! </b></span>
+# <span style="color:red"> <b> ATTENTION : les réels démunis de représentations machine (donc presque tous) sont ARRONDIS !!! </b></span>
 
 # <div class="alert alert-block alert-info"> <b> REGLE A SUIVRE : normaliser les valeurs numériques pour que les calculs soient faits autour de 1 </b></div>
 
@@ -244,7 +247,10 @@ print ('le type de x est : ', type (x))
 # #### Caractères spéciaux
 # La plupart des caractères spéciaux (ponctuation, tirets, ...) ont une signification pour l'interpréteur Python3. Par conséquent, leur usage dans les nom de variable est interdit.
 # Exception importante :
-# > <span style="color:red">__L'emploi du caractère "souligné" ('\_') est fortement recommandé pour la lisibilité des variables__ </span>
+# 
+# <div class="alert alert-block alert-info">
+# L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</strong> pour la lisibilité des variables
+# </div>
 
 # In[14]:
 

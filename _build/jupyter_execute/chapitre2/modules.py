@@ -12,33 +12,48 @@
 # - que le fichier contenant le script de la fonction soit stocké localement (installation du module)
 # - que le module contenant la fonction soit inclus dans les instructions à interpréter (importation du module)
 
-# #### Création du module PH461
+# #### Création du module PH461 en TP
 
 # 1. Créer un fichier texte vierge intitulé PH461.py dans le répertoire PH461/TD1 (celui du notebook du TD1)
 # 2. Copier les fonctions du TD dans le fichier PH461.py
 # 3. Importer les fonctions du modules dans un script ou ue cellule de notebook par la commande __import__ :
 
+# Contenu du fichier PH461_module_test.py :
+
 # In[1]:
 
 
-import PH461
+def incrementor (n):
+    output = n+1
+    return output
+
+def printcoucou ():
+    print ('Coucou')
+    return None
+
+
+# Dans le programme principal, l'emplacement du module personnel doit être ajouté à la liste des emplacements où l'interpréteur va rechercher les modules à importer.
+
+# In[2]:
+
+
+import sys
+sys.path.insert (0,'/home/scola/ENSEIGNEMENT/S4-Ph461/modules/')
+
+
+# Importation du module
+
+# In[3]:
+
+
+import PH461_module_demo as PH461
 
 
 # L'appel d'une fonction issue d'un module doit mentionner le nom du module :
 
-# In[ ]:
+# In[4]:
 
 
 PH461.printcoucou ()
+print (PH461.incrementor (461))
 
-
-# Il est parfois commode de donner un alias au nom du module :
-
-# In[ ]:
-
-
-import PH461 as ph
-ph.printcoucou ()
-
-
-# L'importation d'un module enregistré ailleurs que dans le répertoire de travail sera vue en TP.

@@ -59,7 +59,9 @@
 #     instruction3 ...
 # ```
 
-# > <span style="color:red">__Les instruction devant être répétées sont définies par l'indentation__ </span>
+# <div class="alert alert-block alert-info">
+#     <b>Important :</b> Les instruction devant être répétées sont définies par l'<b>indentation</b>
+# </div>
 
 # In[1]:
 

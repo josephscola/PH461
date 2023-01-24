@@ -504,6 +504,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-d-appartenance">
+     Test d’appartenance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonction-zip">
      Fonction
      <strong>
@@ -698,6 +703,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-d-appartenance">
+     Test d’appartenance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonction-zip">
      Fonction
      <strong>
@@ -837,9 +847,9 @@ Les classes ne seront pas abordées dans ce cours mais pourront être employées
 <section id="les-conteneurs">
 <h2>Les conteneurs :<a class="headerlink" href="#les-conteneurs" title="Permalink to this headline">#</a></h2>
 <p>Un conteneur (de <em>container</em> en anglais) est une séquence ordonnée rassemblant des éléments d’un même type ou de types différents; on accède aux éléments d’un conteneur par son <em>indice</em>, c’est-à-dire son rang dans la séquence.</p>
-<blockquote>
-<div><p><span style="color:red"><strong>ATTENTION ! Les indices sont numérotés à partir de 0.</strong> </span></p>
-</div></blockquote>
+<div class="alert alert-block alert-warning">
+<b>Attention :</b> Les indices sont numérotés à partir de 0.
+</div>
 <section id="syntaxes-communes-a-tous-les-conteneurs">
 <h3>Syntaxes communes à tous les conteneurs<a class="headerlink" href="#syntaxes-communes-a-tous-les-conteneurs" title="Permalink to this headline">#</a></h3>
 <p>La surcharge de l’opérateur (<strong>+</strong>) pour la concaténation est valable pour tous les types de conteneur.
@@ -1013,7 +1023,7 @@ Le nombre d&#39;éléments dans ma_troisieme_liste est :  4
 </section>
 <section id="remove">
 <h3>.remove ()<a class="headerlink" href="#remove" title="Permalink to this headline">#</a></h3>
-<p>La méthode <strong>.remove ()</strong> retire l’élément passé en argument (Attention : méthode hautement dangereuse)</p>
+<p>La méthode <strong>.remove ()</strong> retire l’élément passé en argument</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
@@ -1033,7 +1043,9 @@ après réintégration de 7, x contient :  [1, 2, 3, 4, 5, 6, 8, 7]
 </div>
 </div>
 </div>
-<p>print (VALEUR_RETOURNEE_DE_REMOVE)#### Test d’appartenance</p>
+<div class="alert alert-block alert-danger"> <b> ATTENTION : </b> .remove() est une méthode hautement dangereuse </div></section>
+<section id="test-d-appartenance">
+<h3>Test d’appartenance<a class="headerlink" href="#test-d-appartenance" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;un&#39;</span><span class="p">,</span> <span class="s1">&#39;deux&#39;</span><span class="p">,</span> <span class="s1">&#39;trois&#39;</span><span class="p">,</span> <span class="s1">&#39;quatre&#39;</span><span class="p">,</span> <span class="s1">&#39;cinq&#39;</span><span class="p">]</span>

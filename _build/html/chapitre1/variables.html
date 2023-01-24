@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Types de variables" href="structures.html" />
-    <link rel="prev" title="Algorithmique et syntaxe python" href="algorithmique_syntaxe.html" />
+    <link rel="prev" title="Chapitre 1 : Algorithmique et syntaxe python" href="algorithmique_syntaxe.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="algorithmique_syntaxe.html">
-   Algorithmique et syntaxe python
+   Chapitre 1 : Algorithmique et syntaxe python
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chapitre2/guide_du_codage.html">
-   Guide du codage
+   Chapitre 2 : Guide du codage
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -189,6 +189,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../annexes/installation.html">
+   Quel équipement pour le PH641 ?
+   <a class="anchor" id="section1_1">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../annexes/biblio.html">
+   Bibliographie
+  </a>
  </li>
 </ul>
 
@@ -749,8 +761,9 @@ le nombre d&#39;octets alloué à x est :  44
 </div>
 </div>
 <p>Python ajuste automatiquement la longueur du <em>mot</em> binaire en fonction du nombre à représenter.</p>
-<p>Pour une longueur de mot, on distingue deux types d’entiers suivant que le <em>bit de poids fort</em> (<span class="math notranslate nohighlight">\(2^7\)</span> pour le mot de 8 bits de l’exemple) est remplacé ou non par un <em>bit de signe</em>.
-$<span class="math notranslate nohighlight">\( 
+<p>Pour une longueur de mot, on distingue deux types d’entiers suivant que le <em>bit de poids fort</em> (<span class="math notranslate nohighlight">\(2^7\)</span> pour le mot de 8 bits de l’exemple) est remplacé ou non par un <em>bit de signe</em>.</p>
+<div class="math notranslate nohighlight">
+\[ 
 (10010100)_2 = (-1)^1 \times (
                0\cdot 2^6 +  
                0\cdot 2^5 + 
@@ -760,7 +773,7 @@ $<span class="math notranslate nohighlight">\(
                0\cdot 2^1 + 
                0\cdot 2^0)
              = -20
-\)</span>$</p>
+\]</div>
 </section>
 <section id="reels-machine">
 <h2>Réels machine<a class="headerlink" href="#reels-machine" title="Permalink to this headline">#</a></h2>
@@ -771,8 +784,10 @@ En pratique, les réels sont représentés par trois entiers :</p>
 <li><p>le <em>bit de signe</em> <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
 <li><p>un entier non signé <em>mantisse</em> <span class="math notranslate nohighlight">\(m\)</span>,</p></li>
 <li><p>un entier signé (ou relatif) l’<em>exposant</em> <span class="math notranslate nohighlight">\(n\)</span>.
-Tout <em>réel machine</em> <span class="math notranslate nohighlight">\(x\)</span> est représenté par $<span class="math notranslate nohighlight">\( x = (-1)^s \cdot m\cdot 10^n \)</span>$</p></li>
+Tout <em>réel machine</em> <span class="math notranslate nohighlight">\(x\)</span> est représenté par</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[ x = (-1)^s \cdot m\cdot 10^n \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">2.</span>
@@ -800,7 +815,7 @@ le nombre d&#39;octets allouées à y est :  24
 </div>
 </div>
 </div>
-<p><span style="color:red"> <b> ATTENTION : les réels démunis de représentations machine sont ARRONDIS !!! </b></span></p>
+<p><span style="color:red"> <b> ATTENTION : les réels démunis de représentations machine (donc presque tous) sont ARRONDIS !!! </b></span></p>
 <div class="alert alert-block alert-info"> <b> REGLE A SUIVRE : normaliser les valeurs numériques pour que les calculs soient faits autour de 1 </b></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">1</span> 
@@ -1098,10 +1113,9 @@ le type de x est :  &lt;class &#39;int&#39;&gt;
 <h3>Caractères spéciaux<a class="headerlink" href="#caracteres-speciaux" title="Permalink to this headline">#</a></h3>
 <p>La plupart des caractères spéciaux (ponctuation, tirets, …) ont une signification pour l’interpréteur Python3. Par conséquent, leur usage dans les nom de variable est interdit.
 Exception importante :</p>
-<blockquote>
-<div><p><span style="color:red"><strong>L’emploi du caractère “souligné” (‘_’) est fortement recommandé pour la lisibilité des variables</strong> </span></p>
-</div></blockquote>
-<div class="cell docutils container">
+<div class="alert alert-block alert-info">
+L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</strong> pour la lisibilité des variables
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_facile_a_lire</span> <span class="o">=</span> <span class="mi">20</span><span class="o">/</span><span class="mi">20</span>
 <span class="n">variableinutilementillisible</span> <span class="o">=</span> <span class="mi">0</span><span class="o">/</span><span class="mi">20</span>
@@ -1196,7 +1210,7 @@ Exception importante :</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Algorithmique et syntaxe python</p>
+            <p class="prev-next-title">Chapitre 1 : Algorithmique et syntaxe python</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="structures.html" title="next page">

@@ -26,7 +26,10 @@
 
 # ## Les conteneurs : 
 # Un conteneur (de _container_ en anglais) est une séquence ordonnée rassemblant des éléments d'un même type ou de types différents; on accède aux éléments d'un conteneur par son _indice_, c'est-à-dire son rang dans la séquence.
-# > <span style="color:red">__ATTENTION ! Les indices sont numérotés à partir de 0.__ </span>
+# <div class="alert alert-block alert-warning">
+# <b>Attention :</b> Les indices sont numérotés à partir de 0.
+# </div>
+# 
 # #### Syntaxes communes à tous les conteneurs
 # La surcharge de l'opérateur (__+__) pour la concaténation est valable pour tous les types de conteneur.
 # De même la fonction __len ()__ s'applique à n'importe quel type de conteneur.
@@ -132,7 +135,7 @@ print ("L'indice de 8 dans x est ", indice)
 
 
 # ### .remove ()
-# La méthode __.remove ()__ retire l'élément passé en argument (Attention : méthode hautement dangereuse)
+# La méthode __.remove ()__ retire l'élément passé en argument 
 
 # In[11]:
 
@@ -145,7 +148,9 @@ x += [7]
 print ("après réintégration de 7, x contient : ", x)
 
 
-# print (VALEUR_RETOURNEE_DE_REMOVE)#### Test d'appartenance
+# <div class="alert alert-block alert-danger"> <b> ATTENTION : </b> .remove() est une méthode hautement dangereuse </div>
+
+# ### Test d'appartenance
 
 # In[12]:
 
