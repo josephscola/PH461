@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Autre types de variables" href="autres_types.html" />
-    <link rel="prev" title="Variables numériques" href="variables.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,24 +111,24 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="algorithmique_syntaxe.html">
    Chapitre 1 : Algorithmique et syntaxe python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
      Variables numériques
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="structures.html">
      Types de variables
     </a>
    </li>
@@ -259,7 +257,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/josephscola/PH461/gh-pages/?urlpath=lab/tree/chapitre1/structures.ipynb"
+        <a href="https://mybinder.org/v2/gh/josephscola/PH461/gh-pages/?urlpath=lab/tree/chapitre1/structures_indice_elem_dans_conteneur.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -337,7 +335,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre1/structures.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre1/structures_indice_elem_dans_conteneur.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,7 +363,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapitre1/structures.ipynb"
+        <a href="../_sources/chapitre1/structures_indice_elem_dans_conteneur.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1244,6 +1242,43 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 <section id="argument-de-fonction">
 <h3>1. argument de fonction:<a class="headerlink" href="#argument-de-fonction" title="Permalink to this headline">#</a></h3>
 <p>Le tuple est dupliqué localement dans la fonction, la liste ne l’est pas. Les listent présentent donc l’inconvénient des variables globales : toute modification d’une liste dans une fonction est implicitement répercutée dans le programme principale (avantage tuple)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">indice_de_elem_dans_conteneur</span> <span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">conteneur</span><span class="p">):</span>
+    <span class="n">sortie</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; ne se trouve pas dans &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">conteneur</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">conteneur</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">sortie</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">conteneur</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+            <span class="n">sortie</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">conteneur</span> <span class="o">=</span> <span class="n">conteneur</span> <span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># retire le premier élément du conteneur</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">conteneur</span> <span class="o">+=</span> <span class="n">conteneur</span>
+    <span class="k">return</span> <span class="n">conteneur</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;quatre&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;quatre&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">elem</span> <span class="o">=</span> <span class="s1">&#39;quatre&#39;</span>
+<span class="n">indice_de_elem_dans_conteneur</span> <span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">ma_liste</span><span class="p">)</span>
+<span class="n">indice_de_elem_dans_conteneur</span> <span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">mon_tuple</span><span class="p">)</span>
+
+<span class="n">mon_tuple</span>
+<span class="n">ma_liste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, &#39;quatre&#39;, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="protection-des-elements">
 <h3>2. protection des éléments<a class="headerlink" href="#protection-des-elements" title="Permalink to this headline">#</a></h3>
@@ -1279,6 +1314,22 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 <section id="methodes-natives">
 <h3>3. méthodes natives:<a class="headerlink" href="#methodes-natives" title="Permalink to this headline">#</a></h3>
 <p>Les méthodes associées aux listes sont plus nombreuses et puissantes que celles des tuples (avantage liste)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">mon_tuple</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;cinq&#39;</span><span class="p">,)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">mon_tuple</span><span class="p">)</span>
+
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">ma_liste</span> <span class="o">+=</span> <span class="s1">&#39;cinq&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+
+<span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="s1">&#39;six&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="dictionnaires">
@@ -1454,20 +1505,6 @@ Dans le contexte particulier de l’analyse de données en Physique, ils peuvent
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="variables.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Variables numériques</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="autres_types.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Autre types de variables</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
