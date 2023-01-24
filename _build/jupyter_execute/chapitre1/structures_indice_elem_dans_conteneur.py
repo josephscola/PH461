@@ -274,6 +274,36 @@ print (expression)
 # ### 1. argument de fonction:
 # Le tuple est dupliqué localement dans la fonction, la liste ne l'est pas. Les listent présentent donc l'inconvénient des variables globales : toute modification d'une liste dans une fonction est implicitement répercutée dans le programme principale (avantage tuple)
 
+# In[3]:
+
+
+def indice_de_elem_dans_conteneur (elem, conteneur):
+    sortie = str(elem) + ' ne se trouve pas dans ' + str(conteneur)
+    i = 0
+    while len(conteneur) > 0 and type(sortie) == str:
+        if conteneur[0] == elem:
+            sortie = i
+        else:
+            conteneur = conteneur [1:] # retire le premier élément du conteneur
+            i += 1
+    conteneur += conteneur
+    return conteneur
+
+
+# In[4]:
+
+
+mon_tuple = (1, 2, 3, 'quatre', 5, 6)
+ma_liste = [1, 2, 3, 'quatre', 5, 6]
+
+elem = 'quatre'
+indice_de_elem_dans_conteneur (elem, ma_liste)
+indice_de_elem_dans_conteneur (elem, mon_tuple)
+
+mon_tuple
+ma_liste
+
+
 # ### 2. protection des éléments
 # Les éléments d'un tuple sont protégés : leur modification nécessite la création d'un nouveau conteneur. La rigidité caractéristique des tuple complique (un peu) le codage, mais simplifie (beaucoup) la recherche d'erreurs et l'extension des programme (avantage tuple)
 # 
@@ -298,6 +328,27 @@ print (ma_liste)
 
 # ### 3. méthodes natives:
 # Les méthodes associées aux listes sont plus nombreuses et puissantes que celles des tuples (avantage liste)
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+mon_tuple = (1, 2, 3)
+mon_tuple += ('cinq',)
+print (mon_tuple)
+
+ma_liste = [1, 2, 3, 4]
+ma_liste += 'cinq'
+print (ma_liste)
+
+ma_liste.append ('six')
+print (ma_liste)
+
 
 # ## Dictionnaires
 # A la différence des t-uple et des listes dans lesquels l'accès direct aux éléments se fait par un indice (donné entre crochets), l'accès aux éléments d'un dictionnaire se fait par _mots clef_ (de type __str__).

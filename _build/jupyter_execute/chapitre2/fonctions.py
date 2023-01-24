@@ -91,10 +91,12 @@ printcoucou ()
 
 # > <span style="color:red">__Ce n'est pas parce qu'une fonction renvoit un résultat qu'elle sert à quelque chose.__ </span>
 
-# ### Variables locales et variables globales
+# ### Variables locales ?
 
-# Les variables d'une fonctions sont locales et sont indépendantes des variables du programme appelant la fonction.
+# Les variables d'une fonctions sont indépendantes des variables du programme appelant la fonction.
 # Elle peuvent porter le même nom et rester distinctes.
+# On qualifie ces variables de **locales** parce qu'elles sont détruites à la fin de l'exécution de la fonction.
+# Seules les variables de sorties sont transmises au programme principal.
 
 # In[3]:
 
@@ -103,11 +105,11 @@ def multiplicator (x1, x2) : # les variables de la fonction portent le même nom
     x1 *= x2 #la variable locale x1 est modifiée
     return x1
 
-xx1 = 2
+x1 = 2
 x2 = 3
-x3 = multiplicator (xx1, x2) 
-print ('x1 = ', xx1) # la variable x1 n'est pas modifiée par l'exécution de la fonction
-print ('x3 = ', x3)
+x3 = multiplicator (x1, x2) 
+print ('x1 =', x1) # la variable x1 n'est pas modifiée par l'exécution de la fonction
+print ('x3 =', x3)
 
 
 # Il en va de même pour les tuples qui sont des conteneurs non modifiables.
@@ -115,30 +117,63 @@ print ('x3 = ', x3)
 # In[4]:
 
 
-def concatenator_t (t1, t2) :
-    t1 += t2 #la variable locale x1 est modifiée
-    return t1
+def concatenator (x1, x2) :
+    x1 += x2 #la variable locale x1 est modifiée
+    return x1
 
-tuple1 = (1, 2, 3)
-tuple2 = (4, 5, 6)
-tuple3 = concatenator_t (tuple1, tuple2)
-print ('tuple1: ', tuple1)
-print ('tuple3: ', tuple3)
+x1 = (1, 2, 3)
+x2 = (4, 5, 6)
+x3 = concatenator (x1, x2)
+print ('x1 =', x1)
+print ('x3 =', x3)
 
 
-# Lorsque des listes, conteneurs modifiables, sont passées en argument d'une fonction, elles ne sont pas dupliquées lors de l'exécution de la fonction.
-# Par conséquent, les modifications d'une liste dans une fonction affecte la liste dans le programme principale.
+# Lorsque des conteneurs modifiables comme des listes ou des dictionnaires sont passées en argument d'une fonction, elles ne sont pas dupliquées lors de l'exécution de la fonction.
+# Par conséquent, les modifications dans une fonction sont conservées dans le programme principale.
 
 # In[5]:
 
 
-def concatenator_l (l1, l2) : # l1 et l2 sont les nouveaux noms sous lesquels la fonction accède aux listes
-    l1 += l2 #la modification de l1 affecte liste1
-    return l1
+x1 = [1, 2, 3]
+x2 = [4, 5, 6]
+x3 = concatenator (x1, x2)
+print ('x1 =: ', x1)
+print ('x3: ', x3)
 
-liste1 = [1, 2, 3]
-liste2 = [4, 5, 6]
-liste3 = concatenator_l (liste1, liste2)
-print ('liste1: ', liste1)
-print ('liste3: ', liste3)
+
+# In[6]:
+
+
+def dictionary_merger (x1, x2):
+    x1 |= x2
+    return x1
+
+x1 = {'janvier': 31, 'fevrier': 28, 'mars': 31, 'avril': 30}
+x2 = {'mai': 31, 'juin': 30, 'juillet': 31, 'aout': 31, 'fevrier': 29}
+x3 = dictionary_merger (x1, x2)
+print(x1)
+print(x3)
+
+
+# La fonction suivante illustre les inconvénients susceptibles de survenir en cas de modification d'une liste dans une fonction.
+
+# In[7]:
+
+
+def index_of_elem_in_list (liste, elem):
+    if elem not in liste:
+        output = -1
+    else:
+        output = 0
+        while liste[0] != elem and len (liste) > 0:
+            liste.pop(0)
+            output += 1
+            # print (f'itération {output} : ', liste) # décommenter pour voir afficher l'état de la liste à chaque itération
+    return output
+
+X = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+elem = 8
+print ('etat de la liste X avant appel de la fonction:\n', X)
+print (f'l\'indice de {elem:d} dans X est : {index_of_elem_in_list (X, elem)}')
+print ('etat de la liste X après appel de la fonction:\n', X)
 
