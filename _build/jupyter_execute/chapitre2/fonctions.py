@@ -62,15 +62,17 @@
 #     return output
 # ```
 
-# ### Premières fonctions
+# ### Première fonction, première procédure
 
 # In[1]:
 
 
+# première fonction
 def incrementor (n):
     output = n+1
     return output
 
+# première procédure
 def printcoucou ():
     print ('Coucou')
     return None
@@ -79,7 +81,7 @@ def printcoucou ():
 # In[2]:
 
 
-# Appel des fonctions
+# Appel des fonctions et procédures
 
 var = 11
 new_var = incrementor (var)
@@ -95,8 +97,12 @@ printcoucou ()
 
 # Les variables d'une fonctions sont indépendantes des variables du programme appelant la fonction.
 # Elle peuvent porter le même nom et rester distinctes.
-# On qualifie ces variables de **locales** parce qu'elles sont détruites à la fin de l'exécution de la fonction.
+# 
+# <div class="alert alert-block alert-info">
+# On qualifie ces variables de <b>locales</b> parce qu'elles sont détruites à la fin de l'exécution de la fonction.
 # Seules les variables de sorties sont transmises au programme principal.
+# 
+# </div>
 
 # In[3]:
 
@@ -141,6 +147,8 @@ print ('x1 =: ', x1)
 print ('x3: ', x3)
 
 
+# <span style="color:red">Syntaxe risquée</span>
+
 # In[6]:
 
 
@@ -155,25 +163,44 @@ print(x1)
 print(x3)
 
 
-# La fonction suivante illustre les inconvénients susceptibles de survenir en cas de modification d'une liste dans une fonction.
+# <span style="color:green">Syntaxe sure</span> (créer une nouvelle variable dans la fonction)
 
 # In[7]:
 
 
+def dictionary_merger (x1, x2):
+    output = x1 | x2
+    return output
+
+x1 = {'janvier': 31, 'fevrier': 28, 'mars': 31, 'avril': 30}
+x2 = {'mai': 31, 'juin': 30, 'juillet': 31, 'aout': 31, 'fevrier': 29}
+x3 = dictionary_merger (x1, x2)
+print(x1)
+print(x3)
+
+
+# La fonction suivante illustre les inconvénients susceptibles de survenir en cas de modification d'une liste dans une fonction.
+
+# In[8]:
+
+
 def index_of_elem_in_list (liste, elem):
+    N = len(liste)
     if elem not in liste:
         output = -1
     else:
-        output = 0
-        while liste[0] != elem and len (liste) > 0:
+        output = ()
+        i = 0
+        for i in range (N):
+            if liste[0] == elem:
+                output += (i,)
             liste.pop(0)
-            output += 1
-            # print (f'itération {output} : ', liste) # décommenter pour voir afficher l'état de la liste à chaque itération
+            # print (f'itération {i:d} : ', liste) # décommenter pour voir afficher l'état de la liste à chaque itération
     return output
 
-X = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+X = [1, 2, 8, 4, 5, 6, 7, 8, 9]
 elem = 8
 print ('etat de la liste X avant appel de la fonction:\n', X)
-print (f'l\'indice de {elem:d} dans X est : {index_of_elem_in_list (X, elem)}')
-print ('etat de la liste X après appel de la fonction:\n', X)
+print (f'Indice·s de {elem:d} dans X : {index_of_elem_in_list (X, elem)}')
+print ('Etat de la liste X après appel de la fonction:\n', X)
 

@@ -43,32 +43,89 @@ class COMPLEXE :
         modulus = (self.real ** 2 + self.imag ** 2)**0.5
         self.mod = modulus
         return modulus
-    
-    def C2string (self):
-        # n nombre de chiffres décimaux
-        if self.imag < 0:
-            string = f'{self.real:.3f} - {-self.imag:.3f}i'
-        else:
-            string = f'{self.real:.3f} + {self.imag:.3f}i'
-        return string
 
 
 # In[2]:
 
 
 z1 = COMPLEXE (1, 2)
-print ('z1 = ', z1.C2string ())
 
 z2 = z1.conjugate ()
-print ('z2 = conj (z1) = ' + z2.C2string ())
+
+print (z1.modulus())
+print (z2.modulus())
 
 
-print (z1.mod)
-#z1.modulus ()
+# La commande **dir** appliquée à l'instance d'une classe renvoie la liste des attributs de la classe.
+
+# In[3]:
 
 
-# In[ ]:
+dir (z1)
 
 
+# In[4]:
 
+
+z1.__sizeof__()
+
+
+# In[5]:
+
+
+z1.__ge__(z2)
+
+
+# In[6]:
+
+
+class COMPLEXE :
+    mod = -1
+    def __init__ (self, real, imag) :
+        self.real = real
+        self.imag = imag
+            
+    def conjugate (self):
+        return COMPLEXE (self.real, -self.imag)
+    
+    def modulus (self):
+        modulus = (self.real ** 2 + self.imag ** 2)**0.5
+        self.mod = modulus
+        return modulus
+    
+    def __str__ (self):
+        # n nombre de chiffres décimaux
+        if self.imag < 0:
+            string = f'{self.real:.3f} - {-self.imag:.3f}i'
+        else:
+            string = f'{self.real:.3f} + {self.imag:.3f}i'
+        return string
+    
+    def __ge__(self, other):
+        return self.modulus() >= other.modulus()
+
+
+# In[7]:
+
+
+z1 = COMPLEXE (1, 2)
+z2 = COMPLEXE (0,2)
+
+
+# In[8]:
+
+
+z1.__ge__(z2)
+
+
+# In[9]:
+
+
+z1 >= z2
+
+
+# In[10]:
+
+
+print(z1)
 

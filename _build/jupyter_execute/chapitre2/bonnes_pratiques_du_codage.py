@@ -63,34 +63,21 @@
 # 
 # <span style="color:green">Facile à lire</span>
 # ```python
-# if (a + 5 < ma_fonction (arg1, arg2.method () + 4))
+# if (a + 5 < ma_fonction(arg1, arg2.method() + 4)):
 # ```
 # <span style="color:red">Moins lisible</span>
 # ```python
-# if a+5<ma_fonction(arg1,arg2.method()+ 4)
+# if a+5<ma_fonction(arg1,arg2.method()+ 4):
 # ```
-# ---
-# Utiliser un espace avant une parenthèse d'ouverture lors de l'appel de fonctions ou de l'indexation :
 # 
-# <span style="color:green">Facile à lire</span>
-# ```python
-# ma_fonction (arg1, arg2, arg3)
-# ma_liste [0]
-# mon_tuple [1]
-# mon_dictionnaire ['deux']
-# ```
-# <span style="color:red">Moins lisible</span>
-# ```python
-# ma_fonction(arg1,arg2,arg3)
-# ma_liste[0]
-# mon_tuple[1]
-# mon_dictionnaire['deux']
-# ```
-# Consigne non consensuelle. A essayer
 
 # #### Où placer des sauts de lignes ?
+# Il est impératif de sauter une ligne __entre différentes fonctions__.
+# 
 # Les sauts de lignes permettent de regrouper les instructions en __blocs cohérents__.
 # 
 # En revanche, sauter plusieurs lignes risque de morceler le code et nuire à sa lisibilité.
+
+# ## PEP 8 – Style Guide for Python Code
 # 
-# Il est impératif de sauter une ligne __entre différentes fonctions__.
+# Une description exhaustive des conventions de codage en Python est accessible [ici](https://peps.python.org/pep-0008/)

@@ -8,9 +8,10 @@
 # ### Organiser le dossier de son projet
 # Donner au répertoire de travail la structure suivante :
 # - __1 répertoire projet__ contenant le _jupyter  notebook_ du projet
-#     - __1 sous-répertoire module__ pour les fonctions spécifiques, structuré comme un module après validation dans jupyter-notebook
 #     - __1 sous-répertoire data__ pour les données d'entrée
 #     - __1 sous-répertoire output__ pour les données de sortie
+#     - __1 sous-répertoire module__ pour les fonctions spécifiques, structuré comme un module après validation dans jupyter-notebook (Si développement dans un Notebook) 
+# 
 # - __1 répertoire routines__ dédié aux fonctions appelées par plusieurs projets et localisé au même niveau d'arborescence que les projets.
 
 # ### Ne pas se précipiter sur son clavier
@@ -109,7 +110,11 @@ def ordre_de_l_erreur (err, debug = False):
 # Après avoir contrôlé la sytnaxe et quand le programme ne retourne plus d'erreur, il est indispensable de s'assurer que le résultat est conforme aux objectifs. 
 # Pour cela, il convient d'établir un programme de test visant à contrôler l'exactitude de _toutes les fonctionnalités_, _dans un maximum de cas de figure_ envisageable.
 # 
-# Dans la mesure du possible, le test et la correction d'erreur doit être faite au __fur et à mesure__; les blocs à testers s'en trouvent plus courts.
+# Dans la mesure du possible, le test et la correction d'erreur doit être faite au fur et à mesure; les blocs à testers s'en trouvent plus courts.
+# 
+# <div class="alert alert-block alert-info">
+# <b>Conseil pratique :</b> contrôler l'intégralité d'un bloc d'instruction, fonction, sous-fonctions, <i>etc.</i>, et prendre en charge les exceptions avant de passer au bloc suivant.
+# </div>
 
 # _Exemple_ : __Projet Notation_scientifique__
 # 

@@ -3,7 +3,7 @@
 
 # # Variables numériques
 
-# ## Qu'est-ce qu'un variable ?
+# ## Qu'est-ce qu'une variable ?
 
 # Une variable est à la fois un _identifiant_ dans le programme (un nom de variable) associée à une _zone de la mémoire_ de l'ordinateur dans laquelle est affecté la _valeur_ ou les _valeurs_ successives affectées à la variable.
 # Avant d'être utilisée, une variable doit être déclarée et initialisée.

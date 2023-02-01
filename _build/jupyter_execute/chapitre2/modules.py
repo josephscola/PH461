@@ -57,3 +57,11 @@ import PH461_module_demo as PH461
 PH461.printcoucou ()
 print (PH461.incrementor (461))
 
+
+# La fonction _help(nom_du_module)_ donne accès au _prototypage_ des fonctions, c'est-à-dire la liste des fonctions du module en précisant les variables attendues en arguments.
+
+# In[5]:
+
+
+help ('PH461_module_demo')
+

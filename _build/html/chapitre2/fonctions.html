@@ -435,8 +435,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#premieres-fonctions">
-   Premières fonctions
+  <a class="reference internal nav-link" href="#premiere-fonction-premiere-procedure">
+   Première fonction, première procédure
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -474,8 +474,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#premieres-fonctions">
-   Premières fonctions
+  <a class="reference internal nav-link" href="#premiere-fonction-premiere-procedure">
+   Première fonction, première procédure
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -565,14 +565,16 @@ Les critères présidant à ces choix incluent</p>
 </pre></div>
 </div>
 </section>
-<section id="premieres-fonctions">
-<h2>Premières fonctions<a class="headerlink" href="#premieres-fonctions" title="Permalink to this headline">#</a></h2>
+<section id="premiere-fonction-premiere-procedure">
+<h2>Première fonction, première procédure<a class="headerlink" href="#premiere-fonction-premiere-procedure" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># première fonction</span>
+<span class="k">def</span> <span class="nf">incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">output</span>
 
+<span class="c1"># première procédure</span>
 <span class="k">def</span> <span class="nf">printcoucou</span> <span class="p">():</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span>
@@ -582,7 +584,7 @@ Les critères présidant à ces choix incluent</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appel des fonctions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appel des fonctions et procédures</span>
 
 <span class="n">var</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">new_var</span> <span class="o">=</span> <span class="n">incrementor</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
@@ -606,10 +608,11 @@ Coucou
 <section id="variables-locales">
 <h2>Variables locales ?<a class="headerlink" href="#variables-locales" title="Permalink to this headline">#</a></h2>
 <p>Les variables d’une fonctions sont indépendantes des variables du programme appelant la fonction.
-Elle peuvent porter le même nom et rester distinctes.
-On qualifie ces variables de <strong>locales</strong> parce qu’elles sont détruites à la fin de l’exécution de la fonction.
-Seules les variables de sorties sont transmises au programme principal.</p>
-<div class="cell docutils container">
+Elle peuvent porter le même nom et rester distinctes.</p>
+<div class="alert alert-block alert-info">
+On qualifie ces variables de <b>locales</b> parce qu'elles sont détruites à la fin de l'exécution de la fonction.
+Seules les variables de sorties sont transmises au programme principal.
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplicator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># les variables de la fonction portent le même nom que dans le programme appelant</span>
     <span class="n">x1</span> <span class="o">*=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
@@ -671,6 +674,7 @@ x3:  [1, 2, 3, 4, 5, 6]
 </div>
 </div>
 </div>
+<p><span style="color:red">Syntaxe risquée</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -692,34 +696,59 @@ x3:  [1, 2, 3, 4, 5, 6]
 </div>
 </div>
 </div>
+<p><span style="color:green">Syntaxe sure</span> (créer une nouvelle variable dans la fonction)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">|</span> <span class="n">x2</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;janvier&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;avril&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mai&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;juin&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;juillet&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;aout&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 28, &#39;mars&#39;: 31, &#39;avril&#39;: 30}
+{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 29, &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31}
+</pre></div>
+</div>
+</div>
+</div>
 <p>La fonction suivante illustre les inconvénients susceptibles de survenir en cas de modification d’une liste dans une fonction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_elem_in_list</span> <span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">elem</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
         <span class="n">output</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">elem</span> <span class="ow">and</span> <span class="nb">len</span> <span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">()</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span>
             <span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">output</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="c1"># print (f&#39;itération {output} : &#39;, liste) # décommenter pour voir afficher l&#39;état de la liste à chaque itération</span>
+            <span class="c1"># print (f&#39;itération {i:d} : &#39;, liste) # décommenter pour voir afficher l&#39;état de la liste à chaque itération</span>
     <span class="k">return</span> <span class="n">output</span>
 
-<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="n">elem</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;etat de la liste X avant appel de la fonction:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;l</span><span class="se">\&#39;</span><span class="s1">indice de </span><span class="si">{</span><span class="n">elem</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> dans X est : </span><span class="si">{</span><span class="n">index_of_elem_in_list</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;etat de la liste X après appel de la fonction:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Indice·s de </span><span class="si">{</span><span class="n">elem</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> dans X : </span><span class="si">{</span><span class="n">index_of_elem_in_list</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Etat de la liste X après appel de la fonction:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>etat de la liste X avant appel de la fonction:
- [1, 2, 3, 4, 5, 6, 7, 8, 9]
-l&#39;indice de 8 dans X est : 7
-etat de la liste X après appel de la fonction:
- [8, 9]
+ [1, 2, 8, 4, 5, 6, 7, 8, 9]
+Indice·s de 8 dans X : (2, 7)
+Etat de la liste X après appel de la fonction:
+ []
 </pre></div>
 </div>
 </div>
