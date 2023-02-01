@@ -503,14 +503,6 @@ Une classe rassemble:</p>
         <span class="n">modulus</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mod</span> <span class="o">=</span> <span class="n">modulus</span>
         <span class="k">return</span> <span class="n">modulus</span>
-    
-    <span class="k">def</span> <span class="nf">C2string</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># n nombre de chiffres décimaux</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">i&#39;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">i&#39;</span>
-        <span class="k">return</span> <span class="n">string</span>
 </pre></div>
 </div>
 </div>
@@ -518,21 +510,158 @@ Une classe rassemble:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">COMPLEXE</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;z1 = &#39;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">C2string</span> <span class="p">())</span>
 
 <span class="n">z2</span> <span class="o">=</span> <span class="n">z1</span><span class="o">.</span><span class="n">conjugate</span> <span class="p">()</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;z2 = conj (z1) = &#39;</span> <span class="o">+</span> <span class="n">z2</span><span class="o">.</span><span class="n">C2string</span> <span class="p">())</span>
 
-
-<span class="nb">print</span> <span class="p">(</span><span class="n">z1</span><span class="o">.</span><span class="n">mod</span><span class="p">)</span>
-<span class="c1">#z1.modulus ()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">z1</span><span class="o">.</span><span class="n">modulus</span><span class="p">())</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">z2</span><span class="o">.</span><span class="n">modulus</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>z1 =  1.000 + 2.000i
-z2 = conj (z1) = 1.000 - 2.000i
--1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.23606797749979
+2.23606797749979
+</pre></div>
+</div>
+</div>
+</div>
+<p>La commande <strong>dir</strong> appliquée à l’instance d’une classe renvoie la liste des attributs de la classe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span> <span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;conjugate&#39;,
+ &#39;imag&#39;,
+ &#39;mod&#39;,
+ &#39;modulus&#39;,
+ &#39;real&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span><span class="o">.</span><span class="n">__sizeof__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span><span class="o">.</span><span class="fm">__ge__</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NotImplemented
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">COMPLEXE</span> <span class="p">:</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="p">)</span> <span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">=</span> <span class="n">real</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">=</span> <span class="n">imag</span>
+            
+    <span class="k">def</span> <span class="nf">conjugate</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">COMPLEXE</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">modulus</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">modulus</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mod</span> <span class="o">=</span> <span class="n">modulus</span>
+        <span class="k">return</span> <span class="n">modulus</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># n nombre de chiffres décimaux</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">i&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">i&#39;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">modulus</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">modulus</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">COMPLEXE</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">COMPLEXE</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span><span class="o">.</span><span class="fm">__ge__</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">&gt;=</span> <span class="n">z2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.000 + 2.000i
 </pre></div>
 </div>
 </div>
