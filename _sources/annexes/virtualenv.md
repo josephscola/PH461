@@ -1,6 +1,6 @@
 
 
-# Utiliser ne environnement virtuel
+# Utiliser un environnement virtuel
 
 Développer un projet dans un _environnement virtuel_ n'est pas indispensable à court terme mais le devient avec le temps afin de garantir 
 - la maintenance
