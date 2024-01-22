@@ -8,7 +8,7 @@ Le département de mathématique de l'UVSQ met à disposition un interpréteur e
 Pour ce cours, il n'est donc pas indispensable d'installer Python sur son propre équipement, mais **une installation locale est fortement recommandée** pour le confort de travail.
 
 
-# Installation sous Linux :
+## Installation sous Linux :
 - Installer notebook : 
 <pre><code> pip install notebook </code></pre>
 
@@ -22,9 +22,9 @@ Pour ce cours, il n'est donc pas indispensable d'installer Python sur son propre
 - Lancer un notebook de jupyter :
 <pre><code> jupyter notebook </code></pre>
 
-# Installation sous MacOS :
+## Installation sous MacOS :
 Voir la [documentation en ligne](https://docs.anaconda.com/anaconda/install/mac-os/)
 
-# Installation sous Windows :
+## Installation sous Windows :
 Voir la [procédure](https://github.com/josephscola/PH461/blob/master/annexes/Installation_Python_Windows.pdf)
 

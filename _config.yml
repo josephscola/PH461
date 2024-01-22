@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Python pour la Physique
-author: The Jupyter Book Community
+author: J. Scola
 logo: logo-ufr-sciences.jpg
 
 # Force re-execution of notebooks on each build.
