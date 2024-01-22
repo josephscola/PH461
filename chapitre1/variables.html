@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser ne environnement virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/memo.html">Aide mémoire</a></li>
 </ul>
@@ -539,11 +539,11 @@ Tout <em>réel machine</em> <span class="math notranslate nohighlight">\(x\)</sp
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;2. = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;le nombre d</span><span class="se">\&#39;</span><span class="s1">octets allouées à y est : &#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">__sizeof__</span><span class="p">())</span>
 
-<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.000000000000001</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">+</span> <span class="mf">1e-15</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y1 - y = &#39;</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;le nombre d</span><span class="se">\&#39;</span><span class="s1">octets allouées à y est : &#39;</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">__sizeof__</span><span class="p">())</span>
 
-<span class="n">y2</span> <span class="o">=</span> <span class="mf">2.0000000000000001</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">+</span> <span class="mf">1e-16</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y2 - y = &#39;</span><span class="p">,</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;le nombre d</span><span class="se">\&#39;</span><span class="s1">octets allouées à y est : &#39;</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">__sizeof__</span><span class="p">())</span>
 </pre></div>
@@ -899,11 +899,6 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toté</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">toté</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>

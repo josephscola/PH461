@@ -174,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser ne environnement virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/memo.html">Aide mémoire</a></li>
 </ul>
@@ -846,12 +846,6 @@ Ces opérations permettent d’affecter plusieurs variables en une seule ligne.<
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
-y =  [&#39;12&#39;, 2, 3]
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="les-parentheses-ne-sont-pas-indispensables-pour-definir-un-t-uple">
@@ -865,11 +859,6 @@ y =  [&#39;12&#39;, 2, 3]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -880,6 +869,31 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 <section id="argument-de-fonction">
 <h3>1. argument de fonction:<a class="headerlink" href="#argument-de-fonction" title="Permalink to this heading">#</a></h3>
 <p>Le tuple est dupliqué localement dans la fonction, la liste ne l’est pas. Les listent présentent donc l’inconvénient des variables globales : toute modification d’une liste dans une fonction est implicitement répercutée dans le programme principale (avantage tuple)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contre-exemple à ne pas reproduire</span>
+<span class="k">def</span> <span class="nf">norme_2</span> <span class="p">(</span><span class="n">conteneur</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">conteneur</span><span class="p">:</span>
+        <span class="n">somme</span> <span class="o">+=</span> <span class="n">element</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">conteneur</span> <span class="o">+=</span> <span class="n">conteneur</span>
+    <span class="k">return</span> <span class="n">somme</span>
+
+<span class="n">Liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">Liste</span><span class="p">,</span> <span class="n">norme_2</span> <span class="p">(</span><span class="n">Liste</span><span class="p">))</span>
+
+<span class="n">Tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">norme_2</span> <span class="p">(</span><span class="n">Tuple</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5] 55
+(1, 2, 3, 4, 5) 55
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="protection-des-elements">
 <h3>2. protection des éléments<a class="headerlink" href="#protection-des-elements" title="Permalink to this heading">#</a></h3>
@@ -900,13 +914,6 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 
 <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="s1">&#39;six&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, &#39;cinq&#39;)
-[1, 2, 3, 4, &#39;c&#39;, &#39;i&#39;, &#39;n&#39;, &#39;q&#39;]
-[1, 2, 3, 4, &#39;c&#39;, &#39;i&#39;, &#39;n&#39;, &#39;q&#39;, &#39;six&#39;]
 </pre></div>
 </div>
 </div>
@@ -939,23 +946,11 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le contenu du dictionnaire est :
- {&#39;janvier&#39;: 31, &#39;février&#39;: (28, 29), &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31, &#39;septembre&#39;: 30, &#39;octobre&#39;: 31, &#39;novembre&#39;: 30}
-&lt;class &#39;dict&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mois</span> <span class="o">=</span> <span class="s1">&#39;janvier&#39;</span>
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Il y a </span><span class="si">{</span><span class="n">jours_dans_le_mois</span><span class="w"> </span><span class="p">[</span><span class="n">mois</span><span class="p">]</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> jous dans le mois de&#39;</span><span class="p">,</span> <span class="n">mois</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Il y a 31 jous dans le mois de janvier
 </pre></div>
 </div>
 </div>
@@ -966,12 +961,6 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jours_dans_le_mois</span> <span class="p">[</span><span class="s1">&#39;décembre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Le nouveau contenu du dictionnaire est :</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">jours_dans_le_mois</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le nouveau contenu du dictionnaire est :
- {&#39;janvier&#39;: 31, &#39;février&#39;: (28, 29), &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31, &#39;septembre&#39;: 30, &#39;octobre&#39;: 31, &#39;novembre&#39;: 30, &#39;décembre&#39;: 31}
 </pre></div>
 </div>
 </div>
@@ -987,12 +976,6 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Les entrées du dictionnaire sont :
-dict_keys([&#39;janvier&#39;, &#39;février&#39;, &#39;mars&#39;, &#39;avril&#39;, &#39;mai&#39;, &#39;juin&#39;, &#39;juillet&#39;, &#39;aout&#39;, &#39;septembre&#39;, &#39;octobre&#39;, &#39;novembre&#39;, &#39;décembre&#39;])
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="methode-items">
@@ -1001,11 +984,6 @@ dict_keys([&#39;janvier&#39;, &#39;février&#39;, &#39;mars&#39;, &#39;avril&#39
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jours_dans_le_mois</span><span class="o">.</span><span class="n">items</span> <span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;janvier&#39;, 31), (&#39;février&#39;, (28, 29)), (&#39;mars&#39;, 31), (&#39;avril&#39;, 30), (&#39;mai&#39;, 31), (&#39;juin&#39;, 30), (&#39;juillet&#39;, 31), (&#39;aout&#39;, 31), (&#39;septembre&#39;, 30), (&#39;octobre&#39;, 31), (&#39;novembre&#39;, 30), (&#39;décembre&#39;, 31)])
 </pre></div>
 </div>
 </div>
@@ -1027,21 +1005,11 @@ Dans le contexte particulier de l’analyse de données en Physique, ils peuvent
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># renvoie le nombre d&#39;éléments d&#39;un tuple ou d&#39;une liste</span>
 <span class="nb">len</span> <span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;quatre&#39;</span><span class="p">,</span> <span class="s1">&#39;cinq&#39;</span><span class="p">,</span> <span class="s1">&#39;six&#39;</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1051,11 +1019,6 @@ Dans le contexte particulier de l’analyse de données en Physique, ils peuvent
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># renvoie le nombre d&#39;éléments d&#39;un tuple</span>
 <span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nb">len</span> <span class="p">(</span><span class="n">mon_tuple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
