@@ -161,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables numériques</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autres_types.html">Autre types de variables</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </li>
@@ -716,7 +717,7 @@ Il en résulte que la copie par création d’une nouvelle liste égale à la pr
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="s1">&#39;suis&#39;</span><span class="p">,</span> <span class="s1">&#39;unique&#39;</span> <span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span> <span class="o">==</span> <span class="n">x</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Avant la modification de x, y == x : &#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">==</span><span class="n">x</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;et&#39;</span><span class="p">,</span> <span class="s1">&#39;ne&#39;</span><span class="p">,</span> <span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;laisserai&#39;</span><span class="p">,</span> <span class="s1">&#39;pas&#39;</span><span class="p">,</span> <span class="s1">&#39;dissocier&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;mes&#39;</span><span class="p">,</span> <span class="s1">&#39;copies&#39;</span><span class="p">]</span>
 
@@ -726,10 +727,10 @@ Il en résulte que la copie par création d’une nouvelle liste égale à la pr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avant la modification de x, y == x :  True
-Après la modification de x, y == x :  True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avant la modification de x, y == x :  False
+Après la modification de x, y == x :  False
 la liste copiée y contient : 
- [&#39;je&#39;, &#39;suis&#39;, &#39;unique&#39;, &#39;et&#39;, &#39;ne&#39;, &#39;me&#39;, &#39;laisserai&#39;, &#39;pas&#39;, &#39;dissocier&#39;, &#39;de&#39;, &#39;mes&#39;, &#39;copies&#39;]
+ [3, 6, 9, 12]
 </pre></div>
 </div>
 </div>
@@ -884,12 +885,6 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 
 <span class="n">Tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Avec un tuple :</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">norme_2</span> <span class="p">(</span><span class="n">Tuple</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avec une liste : [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] 55
-Avec un tuple :	 (1, 2, 3, 4, 5) 55
 </pre></div>
 </div>
 </div>

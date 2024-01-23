@@ -12,7 +12,7 @@ Un environnement virtuel est en réalité une distribution Python complète et i
 - les modules python évoluent certaines mises à jour requiert une modification (mineure) des projets qui les appellent. Les environnement virtuels permettent de faire coexister sur une machine plusieurs versions d'un même module de sorte qu'il n'est pas indispensable de vérifier quelles sont les modifications à introduire sur tous les projets à chaque mise à jour de modules.
 - facilite le partage d'un code puisqu'il suffit de joindre au projet la liste des modules qu'il importe pour transmettre pour que le projet puisse fonctionner sur une autre machine (à commencer par la vôtre si vous changez d'ordinateur).
 
-Plus d'information sont accessibiles ![ici](https://www.dabapps.com/insights/introduction-to-pip-and-virtualenv-python/)
+Plus d'information sont accessibiles [ici](https://www.dabapps.com/insights/introduction-to-pip-and-virtualenv-python/)
 
 La procédure d'installation suivante est orientée Linux. Elle utilise l'outil d'instalation _pip_. 
 Des informations sur l'installation de _pip_ sous windows sont accessibles [ici](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows=)

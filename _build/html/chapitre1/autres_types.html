@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre1/autres_types';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -161,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables numériques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structures.html">Conteneurs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Autre types de variables</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </li>
@@ -401,9 +404,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Autre types de variables</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleens">Booléens</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaisons">Comparaisons</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operateurs-and-et-or">Opérateurs <strong>and</strong> et <strong>or</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#titre-1">Titre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titre-2">Titre 2</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operateur-not">Opérateur <strong>not</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-all">Fonction <strong>all ()</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-any">Fonction <strong>any ()</strong></a></li>
@@ -417,6 +427,9 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -563,6 +576,17 @@ not (2 == 5) True
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="titre-1">
+<h1>Titre 1<a class="headerlink" href="#titre-1" title="Permalink to this heading">#</a></h1>
+<section id="titre-2">
+<h2>Titre 2<a class="headerlink" href="#titre-2" title="Permalink to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\cos (\pi + \theta) = -\cos (\theta)
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="s1">&#39;|a|b|a or b|</span><span class="se">\n</span><span class="s1">|:-:|:-:|:-:|</span><span class="se">\n</span><span class="s1">&#39;</span>
@@ -583,7 +607,6 @@ not (2 == 5) True
 |False|False|False|</p>
 </div>
 </div>
-</section>
 <section id="operateur-not">
 <h3>Opérateur <strong>not</strong><a class="headerlink" href="#operateur-not" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -705,6 +728,18 @@ not (2 == 5) True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="o">-</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -724,7 +759,7 @@ not (2 == 5) True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="ne">ZeroDivisionError</span>: float division by zero
@@ -772,6 +807,11 @@ La variable numérique doit figurer entre accolades et le format de représentat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CoucouCoucouCoucou
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,6 +823,14 @@ La variable numérique doit figurer entre accolades et le format de représentat
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;la valeur du réel x est </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">f</span><span class="si">}</span><span class="s1">, avec 6 décimales, par défaut&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;la valeur du réel x est </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, arrondis avec 2 décimales&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;la valeur du réel x est </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">, en notation ingénieur&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>la valeur de l&#39;entier n est 2
+la valeur du réel x est 23.456000, avec 6 décimales, par défaut
+la valeur du réel x est 23.46, arrondis avec 2 décimales
+la valeur du réel x est 2.35e+01, en notation ingénieur
 </pre></div>
 </div>
 </div>
@@ -814,6 +862,12 @@ La variable numérique doit figurer entre accolades et le format de représentat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avant modification, la chaîne s contient :  Coucou
+Après modification, la chaîne s contient :  Doucou
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="fonction-len">
@@ -822,6 +876,11 @@ La variable numérique doit figurer entre accolades et le format de représentat
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">len</span> <span class="p">(</span><span class="s1">&#39;Coucou &#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -897,9 +956,16 @@ La variable numérique doit figurer entre accolades et le format de représentat
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Autre types de variables</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleens">Booléens</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaisons">Comparaisons</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operateurs-and-et-or">Opérateurs <strong>and</strong> et <strong>or</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#titre-1">Titre 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#titre-2">Titre 2</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operateur-not">Opérateur <strong>not</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-all">Fonction <strong>all ()</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-any">Fonction <strong>any ()</strong></a></li>
@@ -913,6 +979,9 @@ La variable numérique doit figurer entre accolades et le format de représentat
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
