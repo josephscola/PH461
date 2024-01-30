@@ -23,7 +23,9 @@ Des informations sur l'installation de _pip_ sous windows sont accessibles [ici]
 pip install virtualenv
 ```
 
-## Comment créer un environnement virtuel ?
+## Comment créer un environnement virtuel _env_ ?
+
+### Linux
 Avec python3.10
 ```bash
 cd ~/mon_projet/
@@ -37,10 +39,34 @@ virtualenv env
 ```
 L'environnement est alors localisé the environment localisé dans le répertoire  ~/mon_projet/env/
 
+### Windows
+Dans le terminal de l'éditeur de notebook (jupyter ou vscode)
+```{bash}
+python -m venv env
+```
+
+### Mac OS
+Dans le terminal de l'éditeur de notebook (jupyter ou vscode)
+```{bash}
+python3 -m venv env
+```
+
 ## Travailler l'environnement virtuel
-Une fois installé, l'environnement virtuel doit être activé par la commande
+Une fois installé, l'environnement virtuel doit être activé par la commande dans le terminal
+
+### Linux
 ```{bash}
 source env/bin/activate
+```
+
+### Windows
+```{bash}
+env/Scripts/activate
+```
+
+### Mac OS
+```{bash}
+env/bin/activate
 ```
 
 la chaine de caractères _(env)_ s'ajoute à l'amorce de commande pour signaler que le terinal travaille dans l'environnement _env_.
@@ -66,6 +92,7 @@ python3 -m pip install -r requirements.txt
 
 ## Utiliser un notebook dans un environnement virtuel 
 
+### Linux
 La procédure de création et d'activation virtuelle est la même que précédemment
 ```bash
 cd ~/mon_projet/
@@ -89,3 +116,6 @@ La désinstallation du noyau (à la fin du projet) est effectuée par la command
 ```bash
 jupyter-kernelspec uninstall env
 ```
+
+### Windows
+Sélectionner le noyau 
