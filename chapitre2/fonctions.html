@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Fonctions &#8212; Python pour la Physique</title>
+    <title>Fonctions (et procédures) &#8212; Python pour la Physique</title>
   
   
   
@@ -161,11 +161,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="guide_du_codage.html">Chapitre 2 : Guide du codage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fonctions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fonctions (et procédures)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programmation_modulaire.html">Programmation modulaire</a></li>
@@ -391,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fonctions</h1>
+    <h1>Fonctions (et procédures)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -401,10 +402,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-python-d-une-fonction">Syntaxe Python d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmation-structuree">Programmation structurée</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">Arguments d’une procédure ou d’une fonction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-ou-fonction">Procédure ou fonction ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#premiere-fonction-premiere-procedure">Première fonction, première procédure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-locales">Variables locales ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilite-des-variables">Visibilité des variables ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -416,50 +421,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fonctions">
-<h1>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="fonctions-et-procedures">
+<h1>Fonctions (et procédures)<a class="headerlink" href="#fonctions-et-procedures" title="Permalink to this heading">#</a></h1>
+<section id="syntaxe-python-d-une-fonction">
+<h2>Syntaxe Python d’une fonction<a class="headerlink" href="#syntaxe-python-d-une-fonction" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="n">argument3</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">instruction1</span>
+    <span class="n">instruction2</span>
+    <span class="n">instruction3</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</section>
+<section id="programmation-structuree">
+<h2>Programmation structurée<a class="headerlink" href="#programmation-structuree" title="Permalink to this heading">#</a></h2>
 <p>Un des enjeux de la programmation est la décomposition d’une procédure complexe en une cascade de sous-procédures de plus en plus simples.
 On appelle parfois ces sous-procédures des <em>routines</em> du fait qu’elles sont tellement élémentaires que l’on fait régulièrement appelle à elles.</p>
 <p>Par exemple :
 La procédure “<strong>Se lever le matin</strong>” peut se décomposer de la façon suivante :</p>
-<ul class="simple">
-<li><p><strong>definition</strong> de <strong>Se lever le matin</strong> :</p>
-<ul>
-<li><p><strong>Initialiser</strong> le processeur</p></li>
-<li><p>heure_courante = <strong>Lecture</strong> de l’affichage du réveil</p></li>
-<li><p><strong>Si</strong> heure_courante &lt; heure_de_se_lever : <strong>Ne rien faire</strong></p></li>
-<li><p><strong>Sinon</strong> :</p></li>
-<li><p><strong>Si</strong> <em>soi</em> est recouvert d’une couverture:</p>
-<ul>
-<li><p><strong>Retrait</strong> de la couverture</p></li>
-</ul>
-</li>
-<li><p><strong>Fin bloc si</strong></p></li>
-<li><p><strong>Se redresser</strong></p></li>
-<li><p>pied_a_bouger = <strong>Identifier</strong> le pied le plus proche du bord du lit</p></li>
-<li><p><strong>Poser par terre</strong> pied_a_bouger</p></li>
-<li><p><strong>Poser par terre</strong> ensemble_des_pieds - pied_a_bouger</p></li>
-<li><p><strong>Contrôle de stabilité bipédique</strong></p></li>
-<li><p><strong>Atteindre la station bipédique</strong></p></li>
-<li><p><strong>Fin de la procédure</strong></p></li>
-</ul>
-</li>
-</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Se_lever_le_matin</span> <span class="p">:</span>
+    <span class="n">Initialiser_le_processeur</span> <span class="p">()</span>
+    <span class="n">heure_courante</span> <span class="o">=</span> <span class="n">Lecture</span> <span class="p">(</span><span class="n">affichage_du_reveil</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">heure_courante</span> <span class="o">&lt;</span> <span class="n">heure_de_se_lever</span> <span class="p">:</span>
+        <span class="n">heure_courante</span> <span class="o">=</span> <span class="n">Lecture</span> <span class="p">(</span><span class="n">affichage_du_réveil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">recouvert_d_une_couverture</span><span class="p">:</span>
+        <span class="n">Retrait_de_la_couverture</span> <span class="p">()</span>
+    <span class="n">Se_redresser</span> <span class="p">()</span>
+    <span class="n">pied_a_bouger</span> <span class="o">=</span> <span class="n">proprioception</span> <span class="p">(</span><span class="n">pied</span><span class="p">,</span> <span class="n">le_plus_proche_du_bord_du_lit</span><span class="p">)</span>
+    <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">pied_a_bouger</span><span class="p">)</span>
+    <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">tous_les_pieds</span> <span class="o">-</span> <span class="n">pied_a_bouger</span><span class="p">)</span>
+    <span class="n">Controle_de_stabilite_bipedique</span> <span class="p">()</span>
+    <span class="n">Atteindre_la</span> <span class="n">station</span> <span class="n">bipédique</span> <span class="p">()</span>
+    <span class="n">humeur_du_moment</span> <span class="o">=</span> <span class="n">Introspection</span> <span class="p">()</span>
+    <span class="k">return</span> <span class="n">humeur_du_moment</span>
+</pre></div>
+</div>
 <p>Chaque instruction peut être elle aussi une procédure ou une fonction. Par exemple :</p>
-<blockquote>
-<div><p><strong>definition</strong> de <strong>Lecture</strong> (chose_a_lire) :</p>
-<blockquote>
-<div><p><strong>Si</strong> les yeux sont fermés :<strong>Ouvrir les yeux</strong><br />
-<strong>Localisation</strong> de la position relative de chose_a_lire <br />
-heure_lue = <strong>Lecture</strong> d’une chaîne de caractère au format “hh : mm”<br />
-<strong>Retourne</strong> heure_lue<br />
-<strong>Fin de la fonction</strong></p>
-</div></blockquote>
-</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Lecture</span> <span class="p">(</span><span class="n">chose_a_lire</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">les_yeux_sont_fermes</span> <span class="o">==</span> <span class="kc">True</span> <span class="p">:</span>
+        <span class="n">Ouvrir_les_yeux</span>
+        <span class="n">Localiser_en_position_relative</span> <span class="p">(</span><span class="n">chose_a_lire</span><span class="p">)</span>
+        <span class="n">heure_lue</span> <span class="o">=</span> <span class="n">Visionner</span> <span class="p">(</span><span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;hh : mm&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">heure_lue</span>
+</pre></div>
+</div>
+</section>
 <section id="arguments-d-une-procedure-ou-d-une-fonction">
 <h2>Arguments d’une procédure ou d’une fonction<a class="headerlink" href="#arguments-d-une-procedure-ou-d-une-fonction" title="Permalink to this heading">#</a></h2>
 <p>Ces procédures font intervenir des paramètres qui permettent de tenir compte du contexte d’exécution.
 Ces paramètres sont appelés les <em>arguments</em> de la procédure.</p>
+<p>Des valeurs par défaut sont permises dans la déclaration d’une fonction; ces valeurs sont écrasées en cas d’appel explicite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">commander_du_pain</span> <span class="p">(</span><span class="n">quantite</span><span class="p">,</span> <span class="n">produit</span> <span class="o">=</span> <span class="s1">&#39;baguette&#39;</span><span class="p">,</span> <span class="n">formule</span> <span class="o">=</span> <span class="s1">&#39;Bonjour, je voudrais&#39;</span><span class="p">):</span>
+    <span class="n">discours</span> <span class="o">=</span> <span class="n">formule</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span> <span class="p">(</span><span class="n">quantite</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">produit</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">quantite</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; svp.&#39;</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">discours</span><span class="p">)</span>
+
+<span class="n">commander_du_pain</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">commander_du_pain</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">produit</span> <span class="o">=</span> <span class="s1">&#39;tradition&#39;</span><span class="p">,</span> <span class="n">formule</span> <span class="o">=</span> <span class="s1">&#39;Salut,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour, je voudrais 2 baguettes svp.
+Salut, 1 tradition svp.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="procedure-ou-fonction">
 <h2>Procédure ou fonction ?<a class="headerlink" href="#procedure-ou-fonction" title="Permalink to this heading">#</a></h2>
@@ -478,18 +508,6 @@ Les critères présidant à ces choix incluent</p>
 <li><p>la lisibilité du code</p></li>
 <li><p>le degré de modularité (partage, extension, …) du code.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Syntaxe Python d&#39;une fonction</span>
-<span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="n">argument3</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="p">:</span>
-    <span class="n">instruction1</span>
-    <span class="n">instruction2</span>
-    <span class="n">instruction3</span>
-    <span class="o">...</span>
-    <span class="k">return</span> <span class="n">output</span>
-</pre></div>
-</div>
-</section>
-<section id="premiere-fonction-premiere-procedure">
-<h2>Première fonction, première procédure<a class="headerlink" href="#premiere-fonction-premiere-procedure" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># première fonction</span>
@@ -528,8 +546,8 @@ Coucou
 <div><p><span style="color:red"><strong>Ce n’est pas parce qu’une fonction renvoit un résultat qu’elle sert à quelque chose.</strong> </span></p>
 </div></blockquote>
 </section>
-<section id="variables-locales">
-<h2>Variables locales ?<a class="headerlink" href="#variables-locales" title="Permalink to this heading">#</a></h2>
+<section id="visibilite-des-variables">
+<h2>Visibilité des variables ?<a class="headerlink" href="#visibilite-des-variables" title="Permalink to this heading">#</a></h2>
 <p>Les variables d’une fonctions sont indépendantes des variables du programme appelant la fonction.
 Elle peuvent porter le même nom et rester distinctes.</p>
 <div class="alert alert-block alert-info">
@@ -585,18 +603,20 @@ Par conséquent, les modifications dans une fonction sont conservées dans le pr
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">x3</span> <span class="o">=</span> <span class="n">concatenator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 =: &#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 = &#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x3: &#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 =:  [1, 2, 3, 4, 5, 6]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 =  [1, 2, 3, 4, 5, 6]
 x3:  [1, 2, 3, 4, 5, 6]
 </pre></div>
 </div>
 </div>
 </div>
+<section id="exemples">
+<h3>Exemples<a class="headerlink" href="#exemples" title="Permalink to this heading">#</a></h3>
 <p><span style="color:red">Syntaxe risquée</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,6 +698,7 @@ Etat de la liste X après appel de la fonction:
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -746,10 +767,14 @@ Etat de la liste X après appel de la fonction:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-python-d-une-fonction">Syntaxe Python d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmation-structuree">Programmation structurée</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">Arguments d’une procédure ou d’une fonction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-ou-fonction">Procédure ou fonction ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#premiere-fonction-premiere-procedure">Première fonction, première procédure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-locales">Variables locales ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilite-des-variables">Visibilité des variables ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

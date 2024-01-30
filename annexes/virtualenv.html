@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre2/guide_du_codage.html">Chapitre 2 : Guide du codage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre2/fonctions.html">Fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre2/fonctions.html">Fonctions (et procédures)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/modules.html">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/programmation_modulaire.html">Programmation modulaire</a></li>
@@ -372,9 +372,23 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-creer-un-environnement-virtuel">Comment créer un environnement virtuel ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#travailler-l-environnement-virtuel">Travailler l’environnement virtuel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-un-notebook-dans-un-environnement-virtuel">Utiliser un notebook dans un environnement virtuel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-creer-un-environnement-virtuel-env">Comment créer un environnement virtuel <em>env</em> ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac-os">Mac OS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#travailler-l-environnement-virtuel">Travailler l’environnement virtuel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Mac OS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-un-notebook-dans-un-environnement-virtuel">Utiliser un notebook dans un environnement virtuel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-mac-os">Windows, Mac OS</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -409,8 +423,10 @@ Des informations sur l’installation de <em>pip</em> sous windows sont accessib
 </pre></div>
 </div>
 </section>
-<section id="comment-creer-un-environnement-virtuel">
-<h2>Comment créer un environnement virtuel ?<a class="headerlink" href="#comment-creer-un-environnement-virtuel" title="Permalink to this heading">#</a></h2>
+<section id="comment-creer-un-environnement-virtuel-env">
+<h2>Comment créer un environnement virtuel <em>env</em> ?<a class="headerlink" href="#comment-creer-un-environnement-virtuel-env" title="Permalink to this heading">#</a></h2>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">#</a></h3>
 <p>Avec python3.10</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/mon_projet/
 virtualenv<span class="w"> </span>-p<span class="w"> </span>python3.10<span class="w"> </span>env
@@ -423,9 +439,26 @@ virtualenv<span class="w"> </span>env
 </div>
 <p>L’environnement est alors localisé the environment localisé dans le répertoire  ~/mon_projet/env/</p>
 </section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
+<p>Dans le terminal de l’éditeur de notebook (jupyter ou vscode)</p>
+</section>
+<section id="mac-os">
+<h3>Mac OS<a class="headerlink" href="#mac-os" title="Permalink to this heading">#</a></h3>
+<p>Dans le terminal de l’éditeur de notebook (jupyter ou vscode)</p>
+</section>
+</section>
 <section id="travailler-l-environnement-virtuel">
 <h2>Travailler l’environnement virtuel<a class="headerlink" href="#travailler-l-environnement-virtuel" title="Permalink to this heading">#</a></h2>
-<p>Une fois installé, l’environnement virtuel doit être activé par la commande</p>
+<p>Une fois installé, l’environnement virtuel doit être activé par la commande dans le terminal</p>
+<section id="id1">
+<h3>Linux<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="id2">
+<h3>Windows<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="id3">
+<h3>Mac OS<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>la chaine de caractères <em>(env)</em> s’ajoute à l’amorce de commande pour signaler que le terinal travaille dans l’environnement <em>env</em>.</p>
 <p>Les modules peuvent être installés un par un dans l’environnement virtuel</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>package-name
@@ -443,8 +476,11 @@ module3&gt;<span class="o">=</span><span class="m">1</span>.0,&lt;<span class="o
 </pre></div>
 </div>
 </section>
+</section>
 <section id="utiliser-un-notebook-dans-un-environnement-virtuel">
 <h2>Utiliser un notebook dans un environnement virtuel<a class="headerlink" href="#utiliser-un-notebook-dans-un-environnement-virtuel" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Linux<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>La procédure de création et d’activation virtuelle est la même que précédemment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/mon_projet/
 virtualenv<span class="w"> </span>env
@@ -465,6 +501,11 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-kernelspec<span class="w"> </span>uninstall<span class="w"> </span>env
 </pre></div>
 </div>
+</section>
+<section id="windows-mac-os">
+<h3>Windows, Mac OS<a class="headerlink" href="#windows-mac-os" title="Permalink to this heading">#</a></h3>
+<p>Sélectionner le noyau python <em>env</em> dans la liste des environnements disponibles.</p>
+</section>
 </section>
 </section>
 
@@ -536,9 +577,23 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-creer-un-environnement-virtuel">Comment créer un environnement virtuel ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#travailler-l-environnement-virtuel">Travailler l’environnement virtuel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-un-notebook-dans-un-environnement-virtuel">Utiliser un notebook dans un environnement virtuel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-creer-un-environnement-virtuel-env">Comment créer un environnement virtuel <em>env</em> ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac-os">Mac OS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#travailler-l-environnement-virtuel">Travailler l’environnement virtuel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Mac OS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-un-notebook-dans-un-environnement-virtuel">Utiliser un notebook dans un environnement virtuel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-mac-os">Windows, Mac OS</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
