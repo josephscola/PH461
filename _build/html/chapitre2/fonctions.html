@@ -448,7 +448,7 @@ La procédure “<strong>Se lever le matin</strong>” peut se décomposer de la
     <span class="k">if</span> <span class="n">recouvert_d_une_couverture</span><span class="p">:</span>
         <span class="n">Retrait_de_la_couverture</span> <span class="p">()</span>
     <span class="n">Se_redresser</span> <span class="p">()</span>
-    <span class="n">pied_a_bouger</span> <span class="o">=</span> <span class="n">proprioception</span> <span class="p">(</span><span class="n">pied</span><span class="p">,</span> <span class="n">le_plus_proche_du_bord_du_lit</span><span class="p">)</span>
+    <span class="n">pied_a_bouger</span> <span class="o">=</span> <span class="n">Proprioception</span> <span class="p">(</span><span class="n">pied</span><span class="p">,</span> <span class="n">le_plus_proche_du_bord_du_lit</span><span class="p">)</span>
     <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">pied_a_bouger</span><span class="p">)</span>
     <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">tous_les_pieds</span> <span class="o">-</span> <span class="n">pied_a_bouger</span><span class="p">)</span>
     <span class="n">Controle_de_stabilite_bipedique</span> <span class="p">()</span>
@@ -555,8 +555,8 @@ On qualifie ces variables de <b>locales</b> parce qu'elles sont détruites à la
 Seules les variables de sorties sont transmises au programme principal.
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplicator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># les variables de la fonction portent le même nom que dans le programme appelant</span>
-    <span class="n">x1</span> <span class="o">*=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplicator</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># les variables de la fonction portent le même nom que dans le programme appelant</span>
+    <span class="n">y1</span> <span class="o">*=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
     <span class="k">return</span> <span class="n">x1</span>
 
 <span class="n">x1</span> <span class="o">=</span> <span class="mi">2</span>
@@ -569,7 +569,7 @@ Seules les variables de sorties sont transmises au programme principal.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 = 2
-x3 = 6
+x3 = 2
 </pre></div>
 </div>
 </div>

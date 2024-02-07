@@ -110,12 +110,31 @@ A quoi s'ajoute l'ajout du noyau Python de l'environnement virtuel _env_ à la l
 ipython kernel install --user --name=env
 ```
 
+Au préalable, la commande _ipkernel_ doit avoir été installée par 
+```{bash}
+pip install ipkernel
+```
+ou bien
+```{bash}
+conda install ipkernel
+```
+ainsi que le commande _pip _ sous Windows.
+
 Ensuite, l'environnement virtuel _env_ peut être choisi dans le notebook parmi les noyaux Python du menu Kernel > Change kernel > env
+
+La liste des environnements virtuels disponibles est accessible par la commande suivante :
+```bash
+jupyter kernelspec list
+```
 
 La désinstallation du noyau (à la fin du projet) est effectuée par la commande 
 ```bash
 jupyter-kernelspec uninstall env
 ```
 
-### Windows
-Sélectionner le noyau 
+A noter que les majuscules du nom de l'environnement ne sont pas prises en compte dans cette dernière commande et le nom de l'environnement à désinstaller doit être saisi en minuscules.
+
+### Windows, Mac OS
+1. L'installation avec conda est décrite [en ligne](https://ipython.readthedocs.io/en/stable/install/kernel_install.html)
+
+2. Sélectionner le noyau python _env_ dans la liste des environnements disponibles.
