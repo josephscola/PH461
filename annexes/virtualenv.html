@@ -496,15 +496,26 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython<span class="w"> </span>kernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>env
 </pre></div>
 </div>
+<p>Au préalable, la commande <em>ipkernel</em> doit avoir été installée par</p>
+<p>ou bien</p>
+<p>ainsi que le commande <em>pip</em> sous Windows.</p>
 <p>Ensuite, l’environnement virtuel <em>env</em> peut être choisi dans le notebook parmi les noyaux Python du menu Kernel &gt; Change kernel &gt; env</p>
+<p>La liste des environnements virtuels disponibles est accessible par la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
+</div>
 <p>La désinstallation du noyau (à la fin du projet) est effectuée par la commande</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-kernelspec<span class="w"> </span>uninstall<span class="w"> </span>env
 </pre></div>
 </div>
+<p>A noter que les majuscules du nom de l’environnement ne sont pas prises en compte dans cette dernière commande et le nom de l’environnement à désinstaller doit être saisi en minuscules.</p>
 </section>
 <section id="windows-mac-os">
 <h3>Windows, Mac OS<a class="headerlink" href="#windows-mac-os" title="Permalink to this heading">#</a></h3>
-<p>Sélectionner le noyau python <em>env</em> dans la liste des environnements disponibles.</p>
+<ol class="arabic simple">
+<li><p>L’installation avec conda est décrite <a class="reference external" href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html">en ligne</a></p></li>
+<li><p>Sélectionner le noyau python <em>env</em> dans la liste des environnements disponibles.</p></li>
+</ol>
 </section>
 </section>
 </section>
