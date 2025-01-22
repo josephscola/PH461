@@ -7,8 +7,8 @@ chapters:
 - file: chapitre1/algorithmique_syntaxe
   sections:
   - file: chapitre1/variables
-  - file: chapitre1/structures
   - file: chapitre1/autres_types
+  - file: chapitre1/structures
   - file: chapitre1/flux_d_instructions
 - file: chapitre2/guide_du_codage
   sections:

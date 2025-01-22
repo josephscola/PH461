@@ -76,10 +76,9 @@ Les modules peuvent être installés un par un dans l'environnement virtuel
 pip install package-name
 ```
 
-Mais il est recommandé de rassembler la liste des modules dans un fichier _requirements.txt_ en précisant éventuellement la version souhaitée 
+Mais il est recommandé de rassembler la liste des modules dans un fichier _requirements.txt_ en précisant éventuellement la version souhaitée :	
 
 ```bash
-requirement text file :
 module1
 module2
 module3>=1.0,<=2.0
