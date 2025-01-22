@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Variables numériques &#8212; Python pour la Physique</title>
   
@@ -15,58 +14,55 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre1/variables';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conteneurs" href="structures.html" />
+    <link rel="next" title="Autre types de variables" href="autres_types.html" />
     <link rel="prev" title="Chapitre 1 : Algorithmique et syntaxe python" href="algorithmique_syntaxe.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-light" alt="Python pour la Physique - Home"/>
+    <script>document.write(`<img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-dark" alt="Python pour la Physique - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -159,23 +182,22 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Variables numériques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autres_types.html">Autre types de variables</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre2/guide_du_codage.html">Chapitre 2 : Guide du codage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre2/fonctions.html">Fonctions</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre2/guide_du_codage.html">Chapitre 2 : Guide du codage</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre2/fonctions.html">Fonctions (et procédures)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/modules.html">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/programmation_modulaire.html">Programmation modulaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/structurer_son_programme.html">Structurer son programme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre2/bonnes_pratiques_du_codage.html">Bonnes pratiques du codage</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
@@ -195,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -204,14 +226,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -364,26 +386,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -439,14 +463,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-numeriques">
-<h1>Variables numériques<a class="headerlink" href="#variables-numeriques" title="Permalink to this heading">#</a></h1>
+<h1>Variables numériques<a class="headerlink" href="#variables-numeriques" title="Link to this heading">#</a></h1>
 <section id="qu-est-ce-qu-une-variable">
-<h2>Qu’est-ce qu’une variable ?<a class="headerlink" href="#qu-est-ce-qu-une-variable" title="Permalink to this heading">#</a></h2>
-<p>Une variable est à la fois un <em>identifiant</em> dans le programme (un nom de variable) associée à une <em>zone de la mémoire</em> de l’ordinateur dans laquelle est affecté la <em>valeur</em> ou les <em>valeurs</em> successives affectées à la variable.
-Avant d’être utilisée, une variable doit être déclarée et initialisée.</p>
+<h2>Qu’est-ce qu’une variable ?<a class="headerlink" href="#qu-est-ce-qu-une-variable" title="Link to this heading">#</a></h2>
+<p>Une variable est un <em>identifiant</em> dans le programme (un nom de variable) associée à une <em>zone de la mémoire</em> de l’ordinateur dans laquelle est affecté la <em>valeur</em> ou les <em>valeurs</em> successives affectées à la variable.
+Avant d’être utilisée, une variable doit être déclarée et initialisée :</p>
 <ol class="arabic simple">
 <li><p>La déclaration d’une variable est la définition son type; cela conditionne les valeurs qu’elle peut recevoir, les opération qu’on peut lui appliquer ainsi que l’espace mémoire qui lui est alloué.</p></li>
 <li><p>L’initialisation d’une variable consiste à lui attribuer une valeur particulière avant sa première intervention dans le programme.</p></li>
@@ -455,7 +479,7 @@ Avant d’être utilisée, une variable doit être déclarée et initialisée.</
 C’est pratique, mais expose au risque de confusion quant au type des variables.</p>
 </section>
 <section id="entiers-machine">
-<h2>Entiers machine<a class="headerlink" href="#entiers-machine" title="Permalink to this heading">#</a></h2>
+<h2>Entiers machine<a class="headerlink" href="#entiers-machine" title="Link to this heading">#</a></h2>
 <p>La représentation machine des <em>entiers</em> est faite par un <em>mot</em> binaire : chaque bit prend la valeur 1 ou 0 qui multiplie la puissance de 2 associée à son rang dans le <em>mot</em>.</p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -522,7 +546,7 @@ le nombre d&#39;octets alloué à x est :  44
 \]</div>
 </section>
 <section id="reels-machine">
-<h2>Réels machine<a class="headerlink" href="#reels-machine" title="Permalink to this heading">#</a></h2>
+<h2>Réels machine<a class="headerlink" href="#reels-machine" title="Link to this heading">#</a></h2>
 <p>La représentation des réels comme une partie entière séparée d’une décimale par une virgule n’est pas adapté à la représentation par une machine.
 Une des raisons est que l’espace mémoire nécessaire ne dépend plus seulement de la valeur numérique mais également de sa précision.
 En pratique, les réels sont représentés par trois entiers :</p>
@@ -561,7 +585,7 @@ le nombre d&#39;octets allouées à y est :  24
 </div>
 </div>
 </div>
-<p><span style="color:red"> <b> ATTENTION : les réels démunis de représentations machine (donc presque tous) sont ARRONDIS !!! </b></span></p>
+<p><span style="color:red"> <b> ATTENTION : les réels démunis d’une représentation machine exacte (donc presque tous) sont ARRONDIS !!! </b></span></p>
 <div class="alert alert-block alert-info"> <b> REGLE A SUIVRE : normaliser les valeurs numériques pour que les calculs soient faits autour de 1 </b></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">1</span> 
@@ -596,9 +620,9 @@ itération 18 : b =                    inf; (allocation mémoire : 24 octets)
 <p>Lorsque la capacité de la représentation en virgule flottante est dépassée ($\pm 10^{\pm 308}, avec 16 chiffres significatifs), les valeurs numériques sont remplacées par l’<em>infini machine</em> (<strong>inf</strong>)</p>
 </section>
 <section id="operations-sur-les-variables-numeriques">
-<h2>Opérations sur les variables numériques<a class="headerlink" href="#operations-sur-les-variables-numeriques" title="Permalink to this heading">#</a></h2>
+<h2>Opérations sur les variables numériques<a class="headerlink" href="#operations-sur-les-variables-numeriques" title="Link to this heading">#</a></h2>
 <section id="addition-soustraction">
-<h3>Addition (+), soustraction (-)<a class="headerlink" href="#addition-soustraction" title="Permalink to this heading">#</a></h3>
+<h3>Addition (+), soustraction (-)<a class="headerlink" href="#addition-soustraction" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
@@ -618,7 +642,7 @@ le type de z = (x - y) est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="multiplication-division">
-<h3>Multiplication (*), division (/)<a class="headerlink" href="#multiplication-division" title="Permalink to this heading">#</a></h3>
+<h3>Multiplication (*), division (/)<a class="headerlink" href="#multiplication-division" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
@@ -655,7 +679,7 @@ le type de z = (x / y) est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="puissance">
-<h3>Puissance (**)<a class="headerlink" href="#puissance" title="Permalink to this heading">#</a></h3>
+<h3>Puissance (**)<a class="headerlink" href="#puissance" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
@@ -675,7 +699,7 @@ le type de z = (x ** y) est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="division-entiere">
-<h3>Division entière (//)<a class="headerlink" href="#division-entiere" title="Permalink to this heading">#</a></h3>
+<h3>Division entière (//)<a class="headerlink" href="#division-entiere" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">11</span>
@@ -693,7 +717,7 @@ le type de z = (x ** y) est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="reste-de-la-division-entiere">
-<h3>Reste de la division entière (%)<a class="headerlink" href="#reste-de-la-division-entiere" title="Permalink to this heading">#</a></h3>
+<h3>Reste de la division entière (%)<a class="headerlink" href="#reste-de-la-division-entiere" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">11</span>
@@ -711,7 +735,7 @@ le type de z = (x ** y) est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="combinaisons-operation-affectation">
-<h3>Combinaisons opération-affectation (+=, -=, *=, /=)<a class="headerlink" href="#combinaisons-operation-affectation" title="Permalink to this heading">#</a></h3>
+<h3>Combinaisons opération-affectation (+=, -=, *=, /=)<a class="headerlink" href="#combinaisons-operation-affectation" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
@@ -737,9 +761,9 @@ après soustraction-affectation, x =  1
 </div>
 </section>
 <section id="conversion-de-type">
-<h3>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Permalink to this heading">#</a></h3>
+<h3>Conversion de type<a class="headerlink" href="#conversion-de-type" title="Link to this heading">#</a></h3>
 <section id="conversion-int-float">
-<h4>Conversion <strong>int</strong> → <strong>float</strong><a class="headerlink" href="#conversion-int-float" title="Permalink to this heading">#</a></h4>
+<h4>Conversion <strong>int</strong> → <strong>float</strong><a class="headerlink" href="#conversion-int-float" title="Link to this heading">#</a></h4>
 <p>La conversion d’une variable de type <strong>int</strong> en un réel de type <strong>float</strong> se produit sans modification de la valeur numérique initiale.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,7 +792,7 @@ le type de x est :  &lt;class &#39;float&#39;&gt;
 </div>
 </section>
 <section id="conversion-float-int">
-<h4>Conversion <strong>float</strong> → <strong>int</strong><a class="headerlink" href="#conversion-float-int" title="Permalink to this heading">#</a></h4>
+<h4>Conversion <strong>float</strong> → <strong>int</strong><a class="headerlink" href="#conversion-float-int" title="Link to this heading">#</a></h4>
 <p>La conversion d’une variable en virgule flottante s’accompagne de la troncature de la partice décimale du réel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,10 +823,10 @@ le type de x est :  &lt;class &#39;int&#39;&gt;
 </section>
 </section>
 <section id="nommage-des-variables">
-<h2>Nommage des variables<a class="headerlink" href="#nommage-des-variables" title="Permalink to this heading">#</a></h2>
+<h2>Nommage des variables<a class="headerlink" href="#nommage-des-variables" title="Link to this heading">#</a></h2>
 <section id="noms-reserves">
-<h3>Noms réservés<a class="headerlink" href="#noms-reserves" title="Permalink to this heading">#</a></h3>
-<table class="table">
+<h3>Noms réservés<a class="headerlink" href="#noms-reserves" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
 <th class="head text-center"><p></p></th>
@@ -853,10 +877,11 @@ le type de x est :  &lt;class &#39;int&#39;&gt;
 </tr>
 </tbody>
 </table>
+</div>
 <p>La plupart des éditeurs (dont notebook) reconnaissent ces mots et les rendent identifiables en leur donnant une couleur particulière.</p>
 </section>
 <section id="caracteres-speciaux">
-<h3>Caractères spéciaux<a class="headerlink" href="#caracteres-speciaux" title="Permalink to this heading">#</a></h3>
+<h3>Caractères spéciaux<a class="headerlink" href="#caracteres-speciaux" title="Link to this heading">#</a></h3>
 <p>La plupart des caractères spéciaux (ponctuation, tirets, …) ont une signification pour l’interpréteur Python3. Par conséquent, leur usage dans les nom de variable est interdit.
 Exception importante :</p>
 <div class="alert alert-block alert-info">
@@ -871,7 +896,7 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 </div>
 </section>
 <section id="majuscule-et-minuscules">
-<h3>Majuscule et minuscules<a class="headerlink" href="#majuscule-et-minuscules" title="Permalink to this heading">#</a></h3>
+<h3>Majuscule et minuscules<a class="headerlink" href="#majuscule-et-minuscules" title="Link to this heading">#</a></h3>
 <p>L’interpréteur Python3 tient compte de la casse dans le nom des variables</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,7 +919,7 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 </div>
 </section>
 <section id="caracteres-linguistiques">
-<h3>Caractères linguistiques<a class="headerlink" href="#caracteres-linguistiques" title="Permalink to this heading">#</a></h3>
+<h3>Caractères linguistiques<a class="headerlink" href="#caracteres-linguistiques" title="Link to this heading">#</a></h3>
 <p>Les caractères spécifiques à certaines langues mais absente de l’anglais sont permises par l’interpréteur Python3 mais sont à éviter; en cas de partage, elles sont susceptibles de créer des problèmes d’incompatibilité (encodage des fichiers textes).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,7 +931,7 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 </div>
 </section>
 <section id="usage-ancestral">
-<h3>Usage “ancestral”<a class="headerlink" href="#usage-ancestral" title="Permalink to this heading">#</a></h3>
+<h3>Usage “ancestral”<a class="headerlink" href="#usage-ancestral" title="Link to this heading">#</a></h3>
 <p>Si le nom d’une variable ne comporte qu’une seule lettre latine, on associe traditionnellement :</p>
 <ul class="simple">
 <li><p>un entier aux lettres <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(m\)</span>, et <span class="math notranslate nohighlight">\(n\)</span></p></li>
@@ -914,7 +939,7 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 </ul>
 </section>
 <section id="ni-o-ni-o">
-<h3>Ni o ni O<a class="headerlink" href="#ni-o-ni-o" title="Permalink to this heading">#</a></h3>
+<h3>Ni o ni O<a class="headerlink" href="#ni-o-ni-o" title="Link to this heading">#</a></h3>
 <p>Pour des raisons de lisibilité évidentes, on évite de nommer une variable <span class="math notranslate nohighlight">\(o\)</span> ou <span class="math notranslate nohighlight">\(O\)</span>.</p>
 </section>
 </section>
@@ -945,11 +970,10 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="algorithmique_syntaxe.html"
@@ -961,18 +985,15 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
       </div>
     </a>
     <a class="right-next"
-       href="structures.html"
+       href="autres_types.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conteneurs</p>
+        <p class="prev-next-title">Autre types de variables</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -980,6 +1001,7 @@ L'emploi du caractère "souligné" ('_') est <strong>fortement recommandé</stro
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1034,9 +1056,10 @@ By J. Scola
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1060,8 +1083,8 @@ By J. Scola
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

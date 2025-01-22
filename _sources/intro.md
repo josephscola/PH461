@@ -1,7 +1,7 @@
 # PH461 : Python pour la Physique
 J. Scola, joseph.scola@uvsq.fr
 
-Année universitaire 2022-2023
+Année universitaire 2024-2025
 
 ## Présentation
 
@@ -24,7 +24,7 @@ Le programme du PH461 inclutse décompose en deux parties principales :
 
 Les séances se dérouleront sur machine afin que les nouvelles notions puissent être expérimentées immédiatement sur des documents interactifs.
 Il est donc nécessaire de __se munir d'un ordinateur (personnel ou cartable numérique) à chaque séance.__
-Le travail sera approfondi par des exercices de synthèse à réaliser durant ces séances de CM/TD ainsi que par des mini-projets effectués durant les 3 séances de 3 h de TP.
+Le travail sera approfondi par des exercices de synthèse à réaliser durant ces séances de CM/TD ainsi que par des mini-projets effectués durant les 2 séances de 4.5 h de TP.
 
 ```{tableofcontents}
 ```
