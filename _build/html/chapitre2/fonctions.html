@@ -182,8 +182,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </details></li>
@@ -490,6 +490,15 @@ La procédure “<strong>Se lever le matin</strong>” peut se décomposer de la
     <span class="k">return</span> <span class="n">heure_lue</span>
 </pre></div>
 </div>
+<p>Attention, un même programme peut être découpé de nombreuses façons différentes.
+C’est précisément dans cette décomposition que réside la valeur ajoutée de l’auteur·rice du programme.
+Les critères présidant à ces choix incluent</p>
+<ul class="simple">
+<li><p>la consommation en ressources (processeur, mémoire),</p></li>
+<li><p>le temps de développement,</p></li>
+<li><p>la lisibilité du code</p></li>
+<li><p>le degré de modularité (partage, extension, …) du code.</p></li>
+</ul>
 </section>
 <section id="arguments-d-une-procedure-ou-d-une-fonction">
 <h2>Arguments d’une procédure ou d’une fonction<a class="headerlink" href="#arguments-d-une-procedure-ou-d-une-fonction" title="Link to this heading">#</a></h2>
@@ -522,15 +531,6 @@ Python rassemble les deux sous le nom de <em>fonction</em> et propose une type d
 <ul class="simple">
 <li><p><em>Procédure</em> : séquence d’instructions paramétrées par à des arguments et retournant une variable de type <strong>None</strong>.</p></li>
 <li><p><em>Fonction</em> : séquence d’instructions paramétrées par à des arguments et retournant une ou plusieurs variable de tout type (sauf None).</p></li>
-</ul>
-<p>Attention, un même programme peut être découpé de nombreuses façons différentes.
-C’est précisément dans cette décomposition que réside la valeur ajoutée de l’auteur·rice du programme.
-Les critères présidant à ces choix incluent</p>
-<ul class="simple">
-<li><p>la consommation en ressources (processeur, mémoire),</p></li>
-<li><p>le temps de développement,</p></li>
-<li><p>la lisibilité du code</p></li>
-<li><p>le degré de modularité (partage, extension, …) du code.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,7 +572,7 @@ Coucou
 </section>
 <section id="visibilite-des-variables">
 <h2>Visibilité des variables ?<a class="headerlink" href="#visibilite-des-variables" title="Link to this heading">#</a></h2>
-<p>Les variables d’une fonctions sont indépendantes des variables du programme appelant la fonction.
+<p>Les variables d’une fonction sont indépendantes des variables du programme appelant la fonction.
 Elle peuvent porter le même nom et rester distinctes.</p>
 <div class="alert alert-block alert-info">
 On qualifie ces variables de <b>locales</b> parce qu'elles sont détruites à la fin de l'exécution de la fonction.
