@@ -184,8 +184,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </details></li>
@@ -461,7 +461,7 @@ A. Braquelaire (U. Bordeaux) définit les cinq objectifs suivants :</p>
 <li><p><strong>Lisibilité</strong> : facilité à comprendre le comportement et la mise en œuvre d’un programme à partir de son code source.</p></li>
 <li><p><strong>Maintenabilité</strong> : facilité à détecter des fautes de programmation et à les corriger sans en introduire de nouvelles.</p></li>
 <li><p><strong>Portabilité</strong> : facilité à adapter toutes les fonctionnalités d’un logiciel à un nouvel environnement.</p></li>
-<li><p><strong>Extensibilité</strong> : ossibilité de modifier l’implémentation d’une partie du programme ou de lui ajouter des fonctionnalités sans que cela ne modilie le comportement de l’ensemble.</p></li>
+<li><p><strong>Extensibilité</strong> : possibilité de modifier l’implémentation d’une partie du programme ou de lui ajouter des fonctionnalités sans que cela ne modifie le comportement de l’ensemble.</p></li>
 <li><p><strong>Réutilisabilité</strong> : possibilité d’assembler entre eux plusieurs portions de programme, écrites à des époques et pour des applications différentes, sans qu’aucune d’entre elles ne perturbe le comportement des autres.</p></li>
 </ol>
 <p>Il s’agit donc de regrouper les fonctionnalités concourrant à un même traitement.
@@ -470,13 +470,6 @@ Il existe 2 approches de regroupement qui s’opposent</p>
 <li><p>“dirigée par le contrôle” : <strong>approche fonctionnelle descendante</strong> incompatibie avec la réutilisabilité et l’extensibilité</p></li>
 <li><p>“dirigée par les données” : <strong>approche fonctionnelle ascendante</strong> favorable à la construction de composants logiciels autonomes (voir prog. par objet).</p></li>
 </ul>
-<p>Si on décline  ces approches dans le contexte du PH461 qui vise au développement d’outils d’analyse de données expérimentales, apparaissent les options suivantes.
-Partant du constat que des données doivent être lues, traitées puis représentées graphiquement,
-la <em>méthode descendante</em> consisterait à développer des fonctions de représentation pour chaque type de données en incluant les traitements associés aux différents cas de figure.
-Ainsi, les <span class="math notranslate nohighlight">\(X(t)\)</span> d’une acquisition temporelle pourraient très bien se trouvées dans un format différent (une liste par exemple) de celles d’une acquisition en fonction de la température <span class="math notranslate nohighlight">\(X(T)\)</span> (qui aurait le type d’un dictionnaire).
-Cela rendrait nécessaire d’écrire deux versions des fonctions de traitements et de représentation alors même que les opérations seraient communes à n’importe quelle fonction d’une seule variable <span class="math notranslate nohighlight">\(f(x)\)</span>.
-A l’inverse la <em>méthode ascendante</em> impliquerait de commencer par développer pour chaque origine de données (et donc chaque format de fichier de données) une fonction qui chargerait les données en mémoire dans un format particulier et toutes les fonctions de traitement seraient compatibles avec ce format (par exemple des listes).
-C’est l’approche <em>ascendante</em> qui est compatible avec la programmation modulaire.</p>
 </section>
 <section id="metaphore-de-l-echaffaudage">
 <h2>Métaphore de l’échaffaudage<a class="headerlink" href="#metaphore-de-l-echaffaudage" title="Link to this heading">#</a></h2>
@@ -508,6 +501,13 @@ C’est à cette échelle qu’il est efficace de renouveler les stratégies de 
 </tbody>
 </table>
 </div>
+<p>Si on décline  ces approches dans le contexte du PH461 qui vise au développement d’outils d’analyse de données expérimentales, apparaissent les options suivantes.</p>
+<p>Partant du constat que des données doivent être lues, traitées puis représentées graphiquement,
+la <em>méthode descendante</em> consisterait à développer des fonctions de représentation pour chaque type de données en incluant les traitements associés aux différents cas de figure.
+Ainsi, les <span class="math notranslate nohighlight">\(X(t)\)</span> d’une acquisition temporelle pourraient très bien se trouvées dans un format différent (une liste par exemple) de celles d’une acquisition en fonction de la température <span class="math notranslate nohighlight">\(X(T)\)</span> (qui aurait le type d’un dictionnaire).
+Cela rendrait nécessaire d’écrire deux versions des fonctions de traitements et de représentation alors même que les opérations seraient communes à n’importe quelle fonction d’une seule variable <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>A l’inverse la <em>méthode ascendante</em> impliquerait de commencer par développer pour chaque origine de données (et donc chaque format de fichier de données) une fonction qui chargerait les données en mémoire dans un format particulier et toutes les fonctions de traitement seraient compatibles avec ce format (par exemple des listes).
+C’est l’approche <em>ascendante</em> qui est compatible avec la programmation modulaire.</p>
 </section>
 <section id="principes-fondamentaux-de-la-modularite">
 <h2>Principes fondamentaux de la modularité<a class="headerlink" href="#principes-fondamentaux-de-la-modularite" title="Link to this heading">#</a></h2>
