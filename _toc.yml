@@ -19,6 +19,7 @@ chapters:
   - file: chapitre2/structurer_son_programme
   - file: chapitre2/bonnes_pratiques_du_codage
 - file: annexes/installation
+- file: annexes/poste_travail
 - file: annexes/virtualenv
 - file: annexes/biblio
 - file: annexes/memo
