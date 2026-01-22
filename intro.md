@@ -1,7 +1,7 @@
 # PH461 : Python pour la Physique
 J. Scola, joseph.scola@uvsq.fr
 
-Année universitaire 2024-2025
+Année universitaire 2025-2026
 
 ## Présentation
 

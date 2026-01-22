@@ -197,6 +197,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/poste_travail.html">Organiser son poste de travail</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/memo.html">Aide mémoire</a></li>
@@ -457,9 +458,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-ou-liste">Tuple ou liste ?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-de-fonction">1. argument de fonction:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protection-des-elements">2. protection des éléments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protection-des-elements">2. protection des éléments :</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#affectation-concatenation-de-chaines-de-caracteres">3. affectation-concaténation de chaînes de caractères :</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methodes-natives">4. méthodes natives:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methodes-natives">4. méthodes natives :</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionnaires">Dictionnaires</a><ul class="nav section-nav flex-column">
@@ -933,7 +934,7 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
     <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">conteneur</span><span class="p">:</span>
         <span class="n">somme</span> <span class="o">+=</span> <span class="n">element</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="n">conteneur</span> <span class="o">+=</span> <span class="n">conteneur</span>
+    <span class="n">conteneur</span> <span class="o">+=</span> <span class="n">conteneur</span> <span class="c1"># modification gratuite du conteneur</span>
     <span class="k">return</span> <span class="n">somme</span>
 
 <span class="n">Liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -944,34 +945,47 @@ A l’usage, ces deux types de conteneurs présentent différences suivantes.</p
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avec une liste : [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] 55
+Avec un tuple :	 (1, 2, 3, 4, 5) 55
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="protection-des-elements">
-<h3>2. protection des éléments<a class="headerlink" href="#protection-des-elements" title="Link to this heading">#</a></h3>
+<h3>2. protection des éléments :<a class="headerlink" href="#protection-des-elements" title="Link to this heading">#</a></h3>
 <p>Les éléments d’un tuple sont protégés : leur modification nécessite la création d’un nouveau conteneur. La rigidité caractéristique des tuple complique (un peu) le codage, mais simplifie (beaucoup) la recherche d’erreurs et l’extension des programme (avantage tuple)</p>
 </section>
 <section id="affectation-concatenation-de-chaines-de-caracteres">
 <h3>3. affectation-concaténation de chaînes de caractères :<a class="headerlink" href="#affectation-concatenation-de-chaines-de-caracteres" title="Link to this heading">#</a></h3>
-<p>L’affectation-concaténation est possible pour les listes et pour les tuples, mais ne produit pas le même résultat lorsque la variable affectée-concaténée est une chaîne de caractère : les caractères de la chaîne se trouvent distribués en éléments séparés dans le cas de la liste.</p>
+<p>L’affectation-concaténation est possible pour les listes et pour les tuples, mais ne produit pas le même résultat lorsque la variable affectée-concaténée est une chaîne de caractère : les caractères de la chaîne se trouvent distribués en éléments séparés dans le cas de la liste (avantage tuple).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">mon_tuple</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;cinq&#39;</span><span class="p">,)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">mon_tuple</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;L&#39;affectation-concaténation donne &quot;</span><span class="p">,</span> <span class="n">mon_tuple</span><span class="p">)</span>
 
 <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">ma_liste</span> <span class="o">+=</span> <span class="s1">&#39;cinq&#39;</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="s1">&#39;cinq&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;La méthode &quot;append&quot; donne&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="n">ma_liste</span><span class="p">)</span>
 
-<span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="s1">&#39;six&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+<span class="n">ma_liste</span> <span class="o">+=</span> <span class="s1">&#39;six&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;L&#39;affectation-cocaténation donne  &quot;</span><span class="p">,</span> <span class="n">ma_liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;affectation-concaténation donne  (1, 2, 3, 4, &#39;cinq&#39;)
+La méthode &quot;append&quot; donne          [1, 2, 3, 4, &#39;cinq&#39;]
+L&#39;affectation-cocaténation donne   [1, 2, 3, 4, &#39;cinq&#39;, &#39;s&#39;, &#39;i&#39;, &#39;x&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="methodes-natives">
-<h3>4. méthodes natives:<a class="headerlink" href="#methodes-natives" title="Link to this heading">#</a></h3>
+<h3>4. méthodes natives :<a class="headerlink" href="#methodes-natives" title="Link to this heading">#</a></h3>
 <p>Les méthodes associées aux listes sont plus nombreuses et puissantes que celles des tuples (avantage liste)</p>
 </section>
 </section>
@@ -1172,9 +1186,9 @@ Dans le contexte particulier de l’analyse de données en Physique, ils peuvent
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-ou-liste">Tuple ou liste ?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-de-fonction">1. argument de fonction:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protection-des-elements">2. protection des éléments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protection-des-elements">2. protection des éléments :</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#affectation-concatenation-de-chaines-de-caracteres">3. affectation-concaténation de chaînes de caractères :</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methodes-natives">4. méthodes natives:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methodes-natives">4. méthodes natives :</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionnaires">Dictionnaires</a><ul class="nav section-nav flex-column">
