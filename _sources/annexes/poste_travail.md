@@ -15,3 +15,20 @@ En premier lieu, créez un répertoire __PH461__ à l'intérieur duquel vous cr�
 1. Utilisez [github](github.com)
 
 2. A minima, réalisez régulièrement une sauvegarde du répertoire contenant de vos projets en cours **en nommant la copie par le nom du projet suivi de la date du jour de la sauvegarde** au format _aaaammjj_.
+
+## Protéger son travail
+- Antivirus à jour (Withsecure), pas de logiciels piratés
+- Proscrire l’usage de stockage distants non sécurisés (OneDrive, Dropbox, TeamViewer, ...)
+- Proscrire les outils en ligne (Overleaf, conversions pdf, traduction, ...)
+- Travailler sur des logiciels
+	- libres (GIMP, Inkscape, LibreOffice, ...)
+	- installés localement (LaTeX, Python, ...)
+	- solidement testés s’ils sont "faits maison"
+- Éviter les réseaux wifi gratuits (gare, trains, magasins, ...)
+
+## Protéger ses données personnelles (ordinateurs et smartphones)
+- Limiter la divulgation d’informations personnelles (photos, noms, adresse,
+statistiques de course à pied)
+- Votre bureau est-il synchronisé avec votre compte microsoft ?
+- Naviguer hors connexion (déconnexion systématique, navigation privée)
+- Sécuriser ses mots de passe et en changer au moins une fois par an
