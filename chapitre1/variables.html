@@ -553,16 +553,27 @@ le nombre d&#39;octets alloué à x + 1  est :  36
 <section id="reels-machine">
 <h2>Réels machine<a class="headerlink" href="#reels-machine" title="Link to this heading">#</a></h2>
 <p>La représentation des réels comme une partie entière séparée d’une décimale par une virgule n’est pas adapté à la représentation par une machine.
-Une des raisons est que l’espace mémoire nécessaire ne dépend plus seulement de la valeur numérique mais également de sa précision.
-En pratique, les réels sont représentés par trois entiers :</p>
-<ul class="simple">
-<li><p>le <em>bit de signe</em> <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
-<li><p>un entier non signé <em>mantisse</em> <span class="math notranslate nohighlight">\(m\)</span>,</p></li>
-<li><p>un entier signé (ou relatif) l’<em>exposant</em> <span class="math notranslate nohighlight">\(n\)</span>.
-Tout <em>réel machine</em> <span class="math notranslate nohighlight">\(x\)</span> est représenté par</p></li>
-</ul>
+Une des raisons est que l’espace mémoire nécessaire ne dépend plus seulement de la valeur numérique mais également de sa précision.</p>
+<p>La représentation des réels en virgule flottante codée sur 32 bits est la suivante :</p>
+<p>Signe <span class="math notranslate nohighlight">\(S\)</span>: <span class="math notranslate nohighlight">\(b_{31}\)</span></p>
+<p>Exposant <span class="math notranslate nohighlight">\(E\)</span> : <span class="math notranslate nohighlight">\((b_{30}b_{29}\dotsb_{23})_2\)</span></p>
+<p>Mantisse <span class="math notranslate nohighlight">\(M\)</span> : <span class="math notranslate nohighlight">\((1b_{22}b_{21}\dotsb_{0})_2\)</span></p>
 <div class="math notranslate nohighlight">
-\[ x = (-1)^s \cdot m\cdot 10^n \]</div>
+\[
+x = (-1)^S \cdot 2^{E-127} \cdot M
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+S = b_{31}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+M = \left( 1 +  \sum_{i=1}^{23} b_{23-i} 2^{-i} \right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E = \sum_{i=0}^{7} b_{23+i} 2^{i}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">1</span> 
