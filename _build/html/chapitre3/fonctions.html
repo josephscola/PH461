@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fonctions (et procédures) &#8212; Python pour la Physique</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre3/fonctions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classes" href="classes.html" />
+    <link rel="prev" title="Chapitre 2 : Guide du codage" href="guide_du_codage.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-light" alt="Python pour la Physique - Home"/>
+    <script>document.write(`<img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-dark" alt="Python pour la Physique - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PH461 : Python pour la Physique
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="guide_du_codage.html">Chapitre 2 : Guide du codage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fonctions (et procédures)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programmation_modulaire.html">Programmation modulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structurer_son_programme.html">Structurer son programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonnes_pratiques_du_codage.html">Bonnes pratiques du codage</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/poste_travail.html">Organiser son poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/memo.html">Aide mémoire</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/josephscola/PH461" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre3/fonctions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapitre3/fonctions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fonctions (et procédures)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-python-d-une-fonction">Syntaxe Python d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmation-structuree">Programmation structurée</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">Arguments d’une procédure ou d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-ou-fonction">Procédure ou fonction ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilite-des-variables">Visibilité des variables ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fonctions-et-procedures">
+<h1>Fonctions (et procédures)<a class="headerlink" href="#fonctions-et-procedures" title="Link to this heading">#</a></h1>
+<section id="syntaxe-python-d-une-fonction">
+<h2>Syntaxe Python d’une fonction<a class="headerlink" href="#syntaxe-python-d-une-fonction" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span> <span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="n">argument3</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">instruction1</span>
+    <span class="n">instruction2</span>
+    <span class="n">instruction3</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</section>
+<section id="programmation-structuree">
+<h2>Programmation structurée<a class="headerlink" href="#programmation-structuree" title="Link to this heading">#</a></h2>
+<p>Un des enjeux de la programmation est la décomposition d’une procédure complexe en une cascade de sous-procédures de plus en plus simples.
+On appelle parfois ces sous-procédures des <em>routines</em> du fait qu’elles sont tellement élémentaires que l’on fait régulièrement appelle à elles.</p>
+<p>Par exemple :
+La procédure “<strong>Se lever le matin</strong>” peut se décomposer de la façon suivante :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Se_lever_le_matin</span> <span class="p">:</span>
+    <span class="n">Initialiser_le_processeur</span> <span class="p">()</span>
+    <span class="n">heure_courante</span> <span class="o">=</span> <span class="n">Lecture</span> <span class="p">(</span><span class="n">affichage_du_reveil</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">heure_courante</span> <span class="o">&lt;</span> <span class="n">heure_de_se_lever</span> <span class="p">:</span>
+        <span class="n">heure_courante</span> <span class="o">=</span> <span class="n">Lecture</span> <span class="p">(</span><span class="n">affichage_du_réveil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">recouvert_d_une_couverture</span><span class="p">:</span>
+        <span class="n">Retrait_de_la_couverture</span> <span class="p">()</span>
+    <span class="n">Se_redresser</span> <span class="p">()</span>
+    <span class="n">pied_a_bouger</span> <span class="o">=</span> <span class="n">Proprioception</span> <span class="p">(</span><span class="n">pied</span><span class="p">,</span> <span class="n">le_plus_proche_du_bord_du_lit</span><span class="p">)</span>
+    <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">pied_a_bouger</span><span class="p">)</span>
+    <span class="n">Poser_par_terre</span> <span class="p">(</span><span class="n">tous_les_pieds</span> <span class="o">-</span> <span class="n">pied_a_bouger</span><span class="p">)</span>
+    <span class="n">Controle_de_stabilite_bipedique</span> <span class="p">()</span>
+    <span class="n">Atteindre_la</span> <span class="n">station</span> <span class="n">bipédique</span> <span class="p">()</span>
+    <span class="n">humeur_du_moment</span> <span class="o">=</span> <span class="n">Introspection</span> <span class="p">()</span>
+    <span class="k">return</span> <span class="n">humeur_du_moment</span>
+</pre></div>
+</div>
+<p>Chaque instruction peut être elle aussi une procédure ou une fonction. Par exemple :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Lecture</span> <span class="p">(</span><span class="n">chose_a_lire</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">les_yeux_sont_fermes</span> <span class="o">==</span> <span class="kc">True</span> <span class="p">:</span>
+        <span class="n">Ouvrir_les_yeux</span>
+        <span class="n">Localiser_en_position_relative</span> <span class="p">(</span><span class="n">chose_a_lire</span><span class="p">)</span>
+        <span class="n">heure_lue</span> <span class="o">=</span> <span class="n">Visionner</span> <span class="p">(</span><span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;hh : mm&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">heure_lue</span>
+</pre></div>
+</div>
+<p>Attention, un même programme peut être découpé de nombreuses façons différentes.
+C’est précisément dans cette décomposition que réside la valeur ajoutée de l’auteur·rice du programme.
+Les critères présidant à ces choix incluent</p>
+<ul class="simple">
+<li><p>la consommation en ressources (processeur, mémoire),</p></li>
+<li><p>le temps de développement,</p></li>
+<li><p>la lisibilité du code</p></li>
+<li><p>le degré de modularité (partage, extension, …) du code.</p></li>
+</ul>
+</section>
+<section id="arguments-d-une-procedure-ou-d-une-fonction">
+<h2>Arguments d’une procédure ou d’une fonction<a class="headerlink" href="#arguments-d-une-procedure-ou-d-une-fonction" title="Link to this heading">#</a></h2>
+<p>Ces procédures font intervenir des paramètres qui permettent de tenir compte du contexte d’exécution.
+Ces paramètres sont appelés les <em>arguments</em> de la procédure.</p>
+<p>Des valeurs par défaut sont permises dans la déclaration d’une fonction; ces valeurs sont écrasées en cas d’appel explicite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">commander_du_pain</span> <span class="p">(</span><span class="n">quantite</span><span class="p">,</span> <span class="n">produit</span> <span class="o">=</span> <span class="s1">&#39;baguette&#39;</span><span class="p">,</span> <span class="n">formule</span> <span class="o">=</span> <span class="s1">&#39;Bonjour, je voudrais&#39;</span><span class="p">):</span>
+    <span class="n">discours</span> <span class="o">=</span> <span class="n">formule</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span> <span class="p">(</span><span class="n">quantite</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">produit</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">quantite</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; svp.&#39;</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">discours</span><span class="p">)</span>
+
+<span class="n">commander_du_pain</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">commander_du_pain</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">produit</span> <span class="o">=</span> <span class="s1">&#39;tradition&#39;</span><span class="p">,</span> <span class="n">formule</span> <span class="o">=</span> <span class="s1">&#39;Salut,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour, je voudrais 2 baguettes svp.
+Salut, 1 tradition svp.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="procedure-ou-fonction">
+<h2>Procédure ou fonction ?<a class="headerlink" href="#procedure-ou-fonction" title="Link to this heading">#</a></h2>
+<p><em>Remarque</em> : certains langages de programmation distinguent les <em>fonctions</em> des <em>procédures</em> suivant qu’une variable est retournée ou non.<br />
+Python rassemble les deux sous le nom de <em>fonction</em> et propose une type de variable vide pour marquer l’absence de valeur retournées par une <em>procédure</em>.</p>
+<ul class="simple">
+<li><p><em>Procédure</em> : séquence d’instructions paramétrées par à des arguments et retournant une variable de type <strong>None</strong>.</p></li>
+<li><p><em>Fonction</em> : séquence d’instructions paramétrées par à des arguments et retournant une ou plusieurs variable de tout type (sauf None).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># première fonction</span>
+<span class="k">def</span> <span class="nf">incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="c1"># première procédure</span>
+<span class="k">def</span> <span class="nf">printcoucou</span> <span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appel des fonctions et procédures</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">new_var</span> <span class="o">=</span> <span class="n">incrementor</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">new_var</span><span class="p">)</span>
+<span class="n">printcoucou</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+Coucou
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ces deux fonctions illustrent un principe important de la programmation :</p>
+<blockquote>
+<div><p><span style="color:red"><strong>Ce n’est pas parce qu’une fonction renvoit un résultat qu’elle sert à quelque chose.</strong> </span></p>
+</div></blockquote>
+</section>
+<section id="visibilite-des-variables">
+<h2>Visibilité des variables ?<a class="headerlink" href="#visibilite-des-variables" title="Link to this heading">#</a></h2>
+<p>Les variables d’une fonction sont indépendantes des variables du programme appelant la fonction.
+Elle peuvent porter le même nom et rester distinctes.</p>
+<div class="alert alert-block alert-info">
+On qualifie ces variables de <b>locales</b> parce qu'elles sont détruites à la fin de l'exécution de la fonction.
+Seules les variables de sorties sont transmises au programme principal.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplicator</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># les variables de la fonction portent le même nom que dans le programme appelant</span>
+    <span class="n">y1</span> <span class="o">*=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
+    <span class="k">return</span> <span class="n">x1</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">multiplicator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 =&#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span> <span class="c1"># la variable x1 n&#39;est pas modifiée par l&#39;exécution de la fonction</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x3 =&#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 = 2
+x3 = 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il en va de même pour les tuples qui sont des conteneurs non modifiables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concatenator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">x1</span> <span class="o">+=</span> <span class="n">x2</span> <span class="c1">#la variable locale x1 est modifiée</span>
+    <span class="k">return</span> <span class="n">x1</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">concatenator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 =&#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x3 =&#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 = (1, 2, 3)
+x3 = (1, 2, 3, 4, 5, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsque des conteneurs modifiables comme des listes ou des dictionnaires sont passées en argument d’une fonction, elles ne sont pas dupliquées lors de l’exécution de la fonction.
+Par conséquent, les modifications dans une fonction sont conservées dans le programme principale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">concatenator</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x1 = &#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x3: &#39;</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1 =  [1, 2, 3, 4, 5, 6]
+x3:  [1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exemples">
+<h3>Exemples<a class="headerlink" href="#exemples" title="Link to this heading">#</a></h3>
+<p><span style="color:red">Syntaxe risquée</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">|=</span> <span class="n">x2</span>
+    <span class="k">return</span> <span class="n">x1</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;janvier&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;avril&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mai&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;juin&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;juillet&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;aout&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 29, &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31}
+{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 29, &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31}
+</pre></div>
+</div>
+</div>
+</div>
+<p><span style="color:green">Syntaxe sure</span> (créer une nouvelle variable dans la fonction)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">|</span> <span class="n">x2</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;janvier&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;avril&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mai&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;juin&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;juillet&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;aout&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;fevrier&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">dictionary_merger</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 28, &#39;mars&#39;: 31, &#39;avril&#39;: 30}
+{&#39;janvier&#39;: 31, &#39;fevrier&#39;: 29, &#39;mars&#39;: 31, &#39;avril&#39;: 30, &#39;mai&#39;: 31, &#39;juin&#39;: 30, &#39;juillet&#39;: 31, &#39;aout&#39;: 31}
+</pre></div>
+</div>
+</div>
+</div>
+<p>La fonction suivante illustre les inconvénients susceptibles de survenir en cas de modification d’une liste dans une fonction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_elem_in_list</span> <span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">elem</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">()</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span>
+            <span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="c1"># print (f&#39;itération {i:d} : &#39;, liste) # décommenter pour voir afficher l&#39;état de la liste à chaque itération</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">elem</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;etat de la liste X avant appel de la fonction:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Indice·s de </span><span class="si">{</span><span class="n">elem</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> dans X : </span><span class="si">{</span><span class="n">index_of_elem_in_list</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">elem</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Etat de la liste X après appel de la fonction:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>etat de la liste X avant appel de la fonction:
+ [1, 2, 8, 4, 5, 6, 7, 8, 9]
+Indice·s de 8 dans X : (2, 7)
+Etat de la liste X après appel de la fonction:
+ []
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "josephscola/PH461",
+            ref: "gh-pages/",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapitre3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="guide_du_codage.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapitre 2 : Guide du codage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-python-d-une-fonction">Syntaxe Python d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmation-structuree">Programmation structurée</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-d-une-procedure-ou-d-une-fonction">Arguments d’une procédure ou d’une fonction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-ou-fonction">Procédure ou fonction ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilite-des-variables">Visibilité des variables ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples">Exemples</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. Scola
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

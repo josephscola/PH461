@@ -1,4 +1,4 @@
-# Chapitre 2 : Guide du codage
+# Chapitre 3 : Guide du codage
 
 Ce chapitre a pour but de fournir des méthodes pratiques pour améliorer les compétences de 
 programmation en facilitant la recherche d'erreurs.

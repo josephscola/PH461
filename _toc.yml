@@ -10,14 +10,18 @@ chapters:
   - file: chapitre1/autres_types
   - file: chapitre1/structures
   - file: chapitre1/flux_d_instructions
-- file: chapitre2/guide_du_codage
+- file: chapitre2/affichages
   sections:
-  - file: chapitre2/fonctions
-  - file: chapitre2/classes
-  - file: chapitre2/modules
-  - file: chapitre2/programmation_modulaire
-  - file: chapitre2/structurer_son_programme
-  - file: chapitre2/bonnes_pratiques_du_codage
+  - file: chapitre2/chaines_de_caracteres
+  - file: chapitre2/traces_de_courbes
+- file: chapitre3/guide_du_codage
+  sections:
+  - file: chapitre3/fonctions
+  - file: chapitre3/classes
+  - file: chapitre3/modules
+  - file: chapitre3/programmation_modulaire
+  - file: chapitre3/structurer_son_programme
+  - file: chapitre3/bonnes_pratiques_du_codage
 - file: annexes/installation
 - file: annexes/poste_travail
 - file: annexes/virtualenv
