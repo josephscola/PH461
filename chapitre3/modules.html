@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapitre 1 : Algorithmique et syntaxe python &#8212; Python pour la Physique</title>
+    <title>Modules &#8212; Python pour la Physique</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre1/algorithmique_syntaxe';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre3/modules';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Variables numériques" href="variables.html" />
-    <link rel="prev" title="PH461 : Python pour la Physique" href="../intro.html" />
+    <link rel="next" title="Programmation modulaire" href="programmation_modulaire.html" />
+    <link rel="prev" title="Classes" href="classes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,20 +180,20 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chapitre 1 : Algorithmique et syntaxe python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables numériques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autres_types.html">Autre types de variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structures.html">Conteneurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flux_d_instructions.html">Flux d’instructions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre3/guide_du_codage.html">Chapitre 2 : Guide du codage</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/fonctions.html">Fonctions (et procédures)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/classes.html">Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/modules.html">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/programmation_modulaire.html">Programmation modulaire</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/structurer_son_programme.html">Structurer son programme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapitre3/bonnes_pratiques_du_codage.html">Bonnes pratiques du codage</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="guide_du_codage.html">Chapitre 2 : Guide du codage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html">Fonctions (et procédures)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programmation_modulaire.html">Programmation modulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structurer_son_programme.html">Structurer son programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonnes_pratiques_du_codage.html">Bonnes pratiques du codage</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
@@ -249,6 +247,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -274,7 +303,7 @@
       
       
       
-      <li><a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre1/algorithmique_syntaxe.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre3/modules.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +333,7 @@
       
       
       
-      <li><a href="../_sources/chapitre1/algorithmique_syntaxe.md" target="_blank"
+      <li><a href="../_sources/chapitre3/modules.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +343,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -375,7 +404,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -386,11 +417,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapitre 1 : Algorithmique et syntaxe python</h1>
+    <h1>Modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-du-module-ph461-en-tp">Création du module PH461 en TP</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -400,19 +439,95 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapitre-1-algorithmique-et-syntaxe-python">
-<h1>Chapitre 1 : Algorithmique et syntaxe python<a class="headerlink" href="#chapitre-1-algorithmique-et-syntaxe-python" title="Link to this heading">#</a></h1>
-<p>Ce chapitre a pour but de rappeler les bases de l’algorithmique et d’approfondir la syntaxe Python vues depuis le S1.
-Il se concentre sur les points associés aux erreurs de codage les plus fréquentes.</p>
-<p>Une présentation exhaustive du langage python pourra être trouvée sur le <a class="reference external" href="https://python.sdv.univ-paris-diderot.fr/">site de l’Université Paris Cité</a> ou dans la <a class="reference external" href="https://docs.python.org/fr/3.10/index.html">documentation officielle de Python</a></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="variables.html">Variables numériques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="autres_types.html">Autre types de variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structures.html">Conteneurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flux_d_instructions.html">Flux d’instructions</a></li>
+  <section id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h1>
+<p>Les modules sont également désignés par le terme de <strong>bibliothèques</strong> (<em>library</em> en anglais) qui illustre parfaitement l’usage qui en est fait : on consulte la documentation des fonctions disponibles et on emprunte les fonctions nécessaires.
+La force du langage Python réside dans l’ouverture de ses bibliothèques : une multitude de contributeurs·rices met à disposition de toutes et tous les modules qu’ils ou elles développent.
+La communauté Python est très active et la plupart des bibliothèques bénéficient d’une maintenance régulière qui garantie la fiabilité.
+En conséquence, si une fonction a déjà été écrite, il est très fortement déconseillé de la réécrire (puisque dans le meilleur des cas, elle ne serait qu’aussi bien).</p>
+<p>Pour qu’une fonction puisse être appelée par un programme, il faut que l’interpréteur y ait accès, c’est-à-dire :</p>
+<ul class="simple">
+<li><p>que le fichier contenant le script de la fonction soit stocké localement (installation du module)</p></li>
+<li><p>que le module contenant la fonction soit inclus dans les instructions à interpréter (importation du module)</p></li>
 </ul>
+<section id="creation-du-module-ph461-en-tp">
+<h2>Création du module PH461 en TP<a class="headerlink" href="#creation-du-module-ph461-en-tp" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Créer un fichier texte vierge intitulé <a class="reference external" href="http://PH461.py">PH461.py</a> dans le répertoire PH461/TD1 (celui du notebook du TD1)</p></li>
+<li><p>Copier les fonctions du TD dans le fichier <a class="reference external" href="http://PH461.py">PH461.py</a></p></li>
+<li><p>Importer les fonctions du modules dans un script ou ue cellule de notebook par la commande <strong>import</strong> :</p></li>
+</ol>
+<p>Contenu du fichier PH461_module_test.py :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incrementor</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="k">def</span> <span class="nf">printcoucou</span> <span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Coucou&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
 </div>
+</div>
+</div>
+<p>Dans le programme principal, l’emplacement du module personnel doit être ajouté à la liste des emplacements où l’interpréteur va rechercher les modules à importer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/home/scola/ENSEIGNEMENT/S4-Ph461/modules/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Importation du module</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PH461_module_demo</span> <span class="k">as</span> <span class="nn">PH461</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’appel d’une fonction issue d’un module doit mentionner le nom du module :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PH461</span><span class="o">.</span><span class="n">printcoucou</span> <span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">PH461</span><span class="o">.</span><span class="n">incrementor</span> <span class="p">(</span><span class="mi">461</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coucou
+462
+</pre></div>
+</div>
+</div>
+</div>
+<p>La fonction <em>help(nom_du_module)</em> donne accès au <em>prototypage</em> des fonctions, c’est-à-dire la liste des fonctions du module en précisant les variables attendues en arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span> <span class="p">(</span><span class="s1">&#39;PH461_module_demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module PH461_module_demo:
+
+NAME
+    PH461_module_demo
+
+FUNCTIONS
+    incrementor(n)
+
+    printcoucou()
+
+FILE
+    /home/scola/ENSEIGNEMENT/S4-Ph461/modules/PH461_module_demo.py
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,7 +543,7 @@ Il se concentre sur les points associés aux erreurs de codage les plus fréquen
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapitre1"
+            path: "./chapitre3"
         },
         predefinedOutput: true
     }
@@ -446,20 +561,20 @@ Il se concentre sur les points associés aux erreurs de codage les plus fréquen
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="classes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PH461 : Python pour la Physique</p>
+        <p class="prev-next-title">Classes</p>
       </div>
     </a>
     <a class="right-next"
-       href="variables.html"
+       href="programmation_modulaire.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Variables numériques</p>
+        <p class="prev-next-title">Programmation modulaire</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -469,6 +584,21 @@ Il se concentre sur les points associés aux erreurs de codage les plus fréquen
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-du-module-ph461-en-tp">Création du module PH461 en TP</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -1,0 +1,2122 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chaînes de caractères &#8212; Python pour la Physique</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapitre2/Chapitre2_affichages_de_données';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-light" alt="Python pour la Physique - Home"/>
+    <script>document.write(`<img src="../_static/logo-ufr-sciences.jpg" class="logo__image only-dark" alt="Python pour la Physique - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PH461 : Python pour la Physique
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre1/algorithmique_syntaxe.html">Chapitre 1 : Algorithmique et syntaxe python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/variables.html">Variables numériques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/autres_types.html">Autre types de variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/structures.html">Conteneurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre1/flux_d_instructions.html">Flux d’instructions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapitre3/guide_du_codage.html">Chapitre 2 : Guide du codage</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/fonctions.html">Fonctions (et procédures)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/programmation_modulaire.html">Programmation modulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/structurer_son_programme.html">Structurer son programme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapitre3/bonnes_pratiques_du_codage.html">Bonnes pratiques du codage</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/installation.html">Quel équipement pour le PH641 ? <a class="anchor" id="section1_1"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/poste_travail.html">Organiser son poste de travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/virtualenv.html">Utiliser un environnement virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/biblio.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/memo.html">Aide mémoire</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/josephscola/PH461" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/josephscola/PH461/issues/new?title=Issue%20on%20page%20%2Fchapitre2/Chapitre2_affichages_de_données.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapitre2/Chapitre2_affichages_de_données.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chaînes de caractères</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chaînes de caractères</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-chaine-de-caractere-est-un-type-de-variables">La chaîne de caractère est un type de variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteres-de-commande">Caractères de commande</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majuscules">Majuscules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation-de-chaines-de-caracteres">Concaténation de chaînes de caractères</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace">Replace()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count">Count()</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-numeriques">Données numériques</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-formatte-f-string">Affichage formatté : f-string</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-ecriture-de-fichiers">Lecture/écriture de fichiers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-de-fichier">Création de fichier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-de-fichier">Lecture de fichier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-graphiques">Représentations graphiques</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-des-fichiers-de-donnees">Création des fichiers de données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-donnees-depuis-des-fichiers">Chargement des données depuis des fichiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-des-lignes">Lecture des lignes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trace-de-figure-figure-axes">Tracé de figure : figure + axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-multi-graphe">Figure multi-graphe</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#twinx">twinx()</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreation">Récréation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributs-d-une-figure">Attributs d’une figure</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#brouillon">Brouillon</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chaines-de-caracteres">
+<h1>Chaînes de caractères<a class="headerlink" href="#chaines-de-caracteres" title="Link to this heading">#</a></h1>
+<section id="la-chaine-de-caractere-est-un-type-de-variables">
+<h2>La chaîne de caractère est un type de variables<a class="headerlink" href="#la-chaine-de-caractere-est-un-type-de-variables" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre1</span> <span class="o">=</span> <span class="s2">&quot;résultat d&#39;expérience&quot;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="p">(</span><span class="n">titre1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Attention ! il faut distinguer l’<strong>affichage</strong> par la commande <em>print</em> du <strong>contenu de la variable</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;résultat d&#39;expérience&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="caracteres-de-commande">
+<h2>Caractères de commande<a class="headerlink" href="#caracteres-de-commande" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre2</span> <span class="o">=</span> <span class="s1">&#39;résultat d</span><span class="se">\&#39;</span><span class="s1">expérience&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre3</span> <span class="o">=</span> <span class="s2">&quot;résultat d&#39;expérience</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+<p>Attention aux chemins d’accès !</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:\some\path</span><span class="se">\n</span><span class="s1">ame\PH461&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\some\path\name\PH461&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\some\path
+ame\PH461
+C:\some\path\name\PH461
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_24283/305103864.py:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  print(&#39;C:\some\path\name\PH461&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre4</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;résultat d&#39;expérience\n&quot;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>résultat d&#39;expérience\n
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="majuscules">
+<h2>Majuscules<a class="headerlink" href="#majuscules" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre3_uppercase</span> <span class="o">=</span> <span class="n">titre3</span><span class="o">.</span><span class="n">upper</span> <span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre3_uppercase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RÉSULTAT D&#39;EXPÉRIENCE
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre3_lowercase</span> <span class="o">=</span> <span class="n">titre3_uppercase</span><span class="o">.</span><span class="n">lower</span> <span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre3_lowercase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre3bis</span> <span class="o">=</span> <span class="n">titre3_lowercase</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span> <span class="p">()</span> <span class="o">+</span> <span class="n">titre3_lowercase</span> <span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre3bis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre3_lowercase</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;résultat d&#39;expérience\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre4</span> <span class="o">=</span> <span class="n">titre3_lowercase</span><span class="o">.</span><span class="n">capitalize</span> <span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultat d&#39;expérience
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="concatenation-de-chaines-de-caracteres">
+<h2>Concaténation de chaînes de caractères<a class="headerlink" href="#concatenation-de-chaines-de-caracteres" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre5</span> <span class="o">=</span> <span class="n">titre4</span> <span class="o">+</span> <span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="nb">len</span> <span class="p">(</span><span class="n">titre3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultat d&#39;expérience
+======================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span> <span class="o">=</span> <span class="n">titre5</span> <span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;s&#39;</span> <span class="o">+</span> <span class="n">titre5</span> <span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultats d&#39;expérience
+======================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replace">
+<h2>Replace()<a class="headerlink" href="#replace" title="Link to this heading">#</a></h2>
+<p>L’instruction <em>replace</em> permet de remplacer un caractère ou une chaîne de caractère par un autre caractère ou chaîne de caractère</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6bis</span> <span class="o">=</span> <span class="n">titre6</span><span class="o">.</span><span class="n">replace</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre6bis</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titre6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultats_d&#39;expérience
+======================
+
+Résultats d&#39;expérience
+======================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="split">
+<h2>Split()<a class="headerlink" href="#split" title="Link to this heading">#</a></h2>
+<p>La méthode <em>split()</em> découpe une chaîne de caractères en plusieurs éléments appelés champs, en utilisant n’importe quel séparateur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Résultats&#39;, &quot;d&#39;expérience\n======================\n&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;é&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;R&#39;, &quot;sultats d&#39;exp&quot;, &#39;rience\n======================\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;Résultats d&#39;expérience\n&quot;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">.find()</span></code>, quant à elle, recherche une chaîne de caractères passée en argument.
+Si l’élément recherché est trouvé, alors l’indice du début de l’élément dans la chaîne de caractères est renvoyé.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">find</span> <span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si l’élément n’est pas trouvé, alors la valeur -1 est renvoyée.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">find</span> <span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si l’élément recherché est trouvé plusieurs fois, seul l’indice de la première occurrence est renvoyé</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">find</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="count">
+<h2>Count()<a class="headerlink" href="#count" title="Link to this heading">#</a></h2>
+<p>La méthode <em>count()</em> compte le nombre d’occurrences d’une chaîne de caractères passée en argument</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">count</span> <span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">count</span> <span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre6</span><span class="o">.</span><span class="n">count</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="donnees-numeriques">
+<h1>Données numériques<a class="headerlink" href="#donnees-numeriques" title="Link to this heading">#</a></h1>
+<section id="affichage-formatte-f-string">
+<h2>Affichage formatté : f-string<a class="headerlink" href="#affichage-formatte-f-string" title="Link to this heading">#</a></h2>
+<p>Une chaine de caractères formatée littérale ou <em>f-string</em> est une chaine de caractères littérale préfixée par <code class="docutils literal notranslate"><span class="pre">f</span></code> ou <code class="docutils literal notranslate"><span class="pre">F</span></code>. Ces chaines peuvent contenir des champs à remplacer, c’est-à-dire des expressions délimitées par des accolades <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Alors que les autres littéraux de chaines ont des valeurs constantes, les chaines formatées sont de vraies expressions évaluées à l’exécution.</p>
+<p>Les séquences d’échappement sont décodées comme à l’intérieur des chaînes de caractères ordinaires (sauf lorsqu’une chaîne de caractères est également marquée comme une chaîne brute). Après décodage, la grammaire s’appliquant au contenu de la chaîne de caractères est :</p>
+<blockquote>
+<div><p><strong>Syntaxe :</strong> (mot clef <code class="docutils literal notranslate"><span class="pre">f</span></code>)</p>
+<p>f ‘ &lt; texte &gt; { &lt; expression/variable &gt; : &lt; format &gt; } &lt; texte &gt; … ‘<br />
+avec, pour les nombres à virgules, le format<br />
+[ alignement ] [ signe ] [ largeur ] [ groupage ] [ .précision ] [ type ]</p>
+<ul class="simple">
+<li><p><em>alignement :</em> détermine ou le nombre est aligné dans sa zone</p></li>
+</ul>
+<blockquote>
+<div><p>“&gt;” aligne à droite<br />
+“&lt;” aligne à gauche<br />
+“^” centré<br />
+“=” aligne le signe à gauche et le nombre à droite</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>signe :</em> détermine l’affichage du signe</p></li>
+</ul>
+<blockquote>
+<div><p>“+” indique que le signe + doit être affiché ainsi que le -<br />
+“-“ indique que le signe - doit être affiché (par defaut)<br />
+“ “ n’affiche pas le + mais insére un espace à la place</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>largeur :</em> détermine la place qui doit être réservée pour l’affichage du nombre</p></li>
+<li><p><em>groupage :</em> détermine le symbole de séparation tous les 3 chiffres</p></li>
+</ul>
+<blockquote>
+<div><p>“_”<br />
+“,”</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>précision :</em> détermine le nombre de chiffres après la virgule</p></li>
+<li><p><em>type :</em> détermine le mode d’affichage</p></li>
+</ul>
+<blockquote>
+<div><p>“e” ou “E” notation scientifique<br />
+“f” ou “F” affichage décimal</p>
+</div></blockquote>
+</div></blockquote>
+<p>Avantage de f-strings:</p>
+<ul class="simple">
+<li><p>variable introduit directement dans les chaines de caractères</p></li>
+<li><p>concaténation des chaines de caractères sans “+”</p></li>
+<li><p>formattage simplifié des nombres</p></li>
+<li><p>alignement du texte simplifié</p></li>
+<li><p>temps d’execution plus court</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples</span>
+
+<span class="c1"># param physiques</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">6.647777092828614</span>  <span class="c1"># = arcsin (n1/n2 sin (x1))</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">19.471220634490688</span> <span class="c1"># = arcsin (n1/n2 sin (x1))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type d&#39;affichage</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;notation décimale : </span><span class="si">{</span><span class="n">y2</span><span class="si">:</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;notation ingénieur : </span><span class="si">{</span><span class="n">y2</span><span class="si">:</span><span class="s1">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>notation décimale : 19.471221
+notation ingénieur : 1.947122e+01
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombre de décimales</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">y1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.65
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nombre de décimales défini en cours d&#39;exécution</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">y1</span><span class="si">:</span><span class="s1">.</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.6478
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">signe</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">groupage</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">alignements</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;à gauche&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;à droite&#39;</span><span class="p">:</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;au milieu&#39;</span><span class="p">:</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;séparé&#39;</span><span class="p">:</span> <span class="s1">&#39;=&#39;</span>
+<span class="p">}</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;signe: </span><span class="si">{</span><span class="n">signe</span><span class="si">}</span><span class="s1">, largeur: </span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">, groupage: </span><span class="si">{</span><span class="n">groupage</span><span class="si">}</span><span class="s1">, précision: </span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">alignements</span><span class="p">:</span>
+    <span class="n">alignement</span> <span class="o">=</span> <span class="n">alignements</span> <span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="n">largeur</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">]:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">z</span><span class="si">:{</span><span class="n">alignement</span><span class="si">}{</span><span class="n">signe</span><span class="si">}{</span><span class="n">largeur</span><span class="si">}{</span><span class="n">groupage</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="s1">f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>signe: -, largeur: 12, groupage: _, précision: 3
+
+============
+à gauche
+10.000      
+6.648       
+30.000      
+19.471      
+============
+à droite
+      10.000
+       6.648
+      30.000
+      19.471
+============
+au milieu
+   10.000   
+   6.648    
+   30.000   
+   19.471   
+============
+séparé
+      10.000
+       6.648
+      30.000
+      19.471
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-ecriture-de-fichiers">
+<h1>Lecture/écriture de fichiers<a class="headerlink" href="#lecture-ecriture-de-fichiers" title="Link to this heading">#</a></h1>
+<p>La commande pour lire ou éditer un fichier est l’instruction <code class="docutils literal notranslate"><span class="pre">open()</span></code>.
+Cette fonction prend en premier paramètre le chemin du fichier (relatif ou absolu) et en second paramètre le type d’ouverture (Chemin relatif / chemin absolu)</p>
+<p>Un <em>chemin d’accès relatif</em> en informatique est un chemin qui prend en compte l’emplacement de lecture.
+Un <em>chemin d’accès absolu</em> est un chemin complet qui peut être lu quelque soit l’emplacement de lecture.</p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">open()</span></code> renvoie alors un objet de type fichier. Une fois que créé l’objet fichier, vous pourrez appeler ses méthodes pour lire ou écrire.</p>
+<blockquote>
+<div><p><strong>Syntaxe :</strong> <code class="docutils literal notranslate"><span class="pre">open</span></code>(file,mode)</p>
+<ul class="simple">
+<li><p><em>file</em> : est le chemin d’accès et le nom du fichier</p></li>
+<li><p><em>mode</em> : précise le mode dans lequel on souhaite ouvrir le fichier<br />
+| mode | description  |
+|:——|:————|<br />
+| ‘r’ | Read : Valeur par défaut. Ouvre un fichier en lecture, erreur si le fichier n’existe pas|
+| ‘a’ | Append : Ouvre un fichier à ajouter, crée le fichier s’il n’existe pas.  Le pointeur est placé à la fin du fichier s’il existe||<br />
+| ‘w’ |  Write : Ouvre un fichier pour l’écriture, crée le fichier s’il n’existe pas. Écrase le contenu du fichier s’il existe déjà |<br />
+| ‘x’ |  Create : Crée le fichier spécifié, renvoie une erreur si le fichier existe |<br />
+| ‘t’ | Ouvrir le fichier en mode texte. |<br />
+| ‘b’ | Ouvrir le fichier en mode binaire. |<br />
+| ‘+’ | Ouvrir un fichier pour mise à jour (lecture et écriture)</p></li>
+</ul>
+</div></blockquote>
+<p>A l’issue des opérations, le fichier doit être fermé par l’instruction <code class="docutils literal notranslate"><span class="pre">close()</span></code></p>
+<section id="creation-de-fichier">
+<h2>Création de fichier<a class="headerlink" href="#creation-de-fichier" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path2data</span> <span class="o">=</span> <span class="s1">&#39;data/&#39;</span>
+<span class="c1">#path2data = &#39;/home/scola/ENSEIGNEMENT/S4-Ph461/cours/chapitre2/data/&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="s1">&#39;mon_premier_fichier.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="n">titre6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="s2">&quot;Cette chaine ne doit apparaître qu&#39;une seule fois</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="s1">&#39;mon_premier_fichier.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="s2">&quot;je recommence parce que je m&#39;étais trompé&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quel est le contenu de <em>mon_premier_fichier</em> ?</p>
+<p>Une bonne pratique est d’utiliser la syntaxe suivante qui garantie la fermeture du fichier même si une exception survient en cours d’exécution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="s1">&#39;mon_premier_fichier.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="n">titre6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lecture-de-fichier">
+<h2>Lecture de fichier<a class="headerlink" href="#lecture-de-fichier" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="s1">&#39;mon_premier_fichier.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span> <span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultats d&#39;expérience
+======================
+</pre></div>
+</div>
+</div>
+</div>
+<p>La méthode <code class="docutils literal notranslate"><span class="pre">split()</span></code> est un bon moyen d’accèder au contenu ligne par ligne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contenu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Résultats d&#39;expérience\n======================\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">contenu</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;Résultats d&#39;expérience&quot;, &#39;======================&#39;, &#39;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="application">
+<h2>Application<a class="headerlink" href="#application" title="Link to this heading">#</a></h2>
+<p>On souhaite créer un fichier contenant les valeurs théoriques d’angles réfractés dans le verre pour des incidences allant de 10 à 80 degrès par pas de 10 degrés.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Génération des donnéess</span>
+<span class="c1"># param physiques</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="n">deg2rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span> <span class="p">(</span><span class="n">n1</span> <span class="o">/</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">deg2rad</span><span class="p">))</span> <span class="o">/</span> <span class="n">deg2rad</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = [10 20 30 40 50 60 70 80]
+y = [ 6.64777709 13.18014216 19.47122063 25.37399394 30.71022077 35.26438968
+ 38.78955642 41.03641053]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il existe de multiples façon de procéder. Choisissons en une qui facilite la lecture du fichier de données.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage formaté</span>
+<span class="n">data_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">titres_colonnes</span> <span class="o">=</span> <span class="s2">&quot;Angle d&#39;incidence (deg.),&quot;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="s2">&quot;Angle réfracté (deg.)</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">data_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.15f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">titres_colonnes</span> <span class="o">+</span> <span class="n">data_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Angle d&#39;incidence (deg.),    Angle réfracté (deg.)
+                      10,        6.647777092828614
+                      20,       13.180142161400390
+                      30,       19.471220634490688
+                      40,       25.373993939179407
+                      50,       30.710220766102168
+                      60,       35.264389682754647
+                      70,       38.789556416355097
+                      80,       41.036410525203344
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le fichier contient déjà un titre. Pour ne pas l’écraser, on utilise le mode d’écriture par “ajout à la fin” (<em>append</em>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># écriture des données dans le fichier</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="s1">&#39;mon_premier_fichier.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="n">titres_colonnes</span> <span class="o">+</span> <span class="n">data_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="representations-graphiques">
+<h1>Représentations graphiques<a class="headerlink" href="#representations-graphiques" title="Link to this heading">#</a></h1>
+<p>Deux expérimentatrices, Ingrid et Pratibha, ont réalisé par chacune de leur côté la mesure de l’angle réfracté dans le verre en fonction de l’angle d’incidence.</p>
+<section id="creation-des-fichiers-de-donnees">
+<h2>Création des fichiers de données<a class="headerlink" href="#creation-des-fichiers-de-donnees" title="Link to this heading">#</a></h2>
+<p>Ingrid a saisi ses résultats dans sa feuille de travail de la façon suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ingrid</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="mf">11.2</span><span class="p">,</span> <span class="mf">23.37</span><span class="p">,</span> <span class="mf">30.53</span><span class="p">,</span> <span class="mf">45.33</span><span class="p">,</span> <span class="mf">50.56</span><span class="p">,</span> <span class="mf">62.12</span><span class="p">,</span> <span class="mf">67.93</span><span class="p">,</span> <span class="mf">79.42</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">6.75</span><span class="p">,</span> <span class="mf">13.93</span><span class="p">,</span> <span class="mf">22.44</span><span class="p">,</span> <span class="mf">27.57</span><span class="p">,</span> <span class="mf">34.07</span><span class="p">,</span> <span class="mf">37.49</span><span class="p">,</span> <span class="mf">41.5</span><span class="p">,</span> <span class="mf">40.69</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">delta_xi</span><span class="p">,</span> <span class="n">delta_yi</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">2.5</span> <span class="c1"># en degrés</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># création de deux tuples de données</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ingrid</span>
+<span class="c1"># affichage formaté</span>
+<span class="n">data_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">titres_colonnes</span>  <span class="o">=</span> <span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="s2">&quot;Incertitude (deg.)&quot;</span>
+<span class="n">titres_colonnes</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="s2">&quot;Angle réfracté (deg.)&quot;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="s2">&quot;Incertitude (deg.)</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">data_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">delta_xi</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">delta_yi</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">contenu_fichier</span> <span class="o">=</span> <span class="n">titre6</span> <span class="o">+</span> <span class="n">titres_colonnes</span> <span class="o">+</span> <span class="n">data_str</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">contenu_fichier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultats d&#39;expérience
+======================
+Angle d&#39;incidence (deg.)        Incertitude (deg.)     Angle réfracté (deg.)        Incertitude (deg.)
+                   11.20,                     3.00,                     6.75,                     2.50
+                   23.37,                     3.00,                    13.93,                     2.50
+                   30.53,                     3.00,                    22.44,                     2.50
+                   45.33,                     3.00,                    27.57,                     2.50
+                   50.56,                     3.00,                    34.07,                     2.50
+                   62.12,                     3.00,                    37.49,                     2.50
+                   67.93,                     3.00,                    41.50,                     2.50
+                   79.42,                     3.00,                    40.69,                     2.50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># écriture des données dans un fichier &#39;Ingrid.txt&#39;</span>
+<span class="n">nom_du_fichier</span> <span class="o">=</span> <span class="s1">&#39;Ingrid.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="n">nom_du_fichier</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="n">contenu_fichier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pratibha a choisi de reporter ses résultats par ligne :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pratibha</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">10.67</span><span class="p">,</span> <span class="mf">8.54</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">20.67</span><span class="p">,</span> <span class="mf">15.08</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">30.67</span><span class="p">,</span> <span class="mf">21.37</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">40.67</span><span class="p">,</span> <span class="mf">27.27</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">50.67</span><span class="p">,</span> <span class="mf">32.61</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">60.67</span><span class="p">,</span> <span class="mf">37.16</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">70.67</span><span class="p">,</span> <span class="mf">40.69</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">80.67</span><span class="p">,</span> <span class="mf">42.93</span><span class="p">)</span>
+     <span class="p">]</span>
+<span class="n">delta_xp</span><span class="p">,</span> <span class="n">delta_yp</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>C’est bien aussi, mais ce conditionnement des données ne permet pas d’écrire dans un fichier de la même façon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">tuple</span> <span class="p">(</span><span class="nb">zip</span> <span class="p">(</span><span class="o">*</span><span class="n">pratibha</span><span class="p">))</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((10.67, 20.67, 30.67, 40.67, 50.67, 60.67, 70.67, 80.67),
+ (8.54, 15.08, 21.37, 27.27, 32.61, 37.16, 40.69, 42.93))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage formaté</span>
+<span class="n">data_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">titres_colonnes</span>  <span class="o">=</span> <span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="s2">&quot;Incertitude (deg.)&quot;</span>
+<span class="n">titres_colonnes</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="s2">&quot;Angle réfracté (deg.)&quot;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="s2">&quot;Incertitude (deg.)</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">data_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">delta_xp</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">delta_yp</span><span class="si">:</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">largeur</span><span class="si">}</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">contenu_fichier</span> <span class="o">=</span> <span class="n">titre6</span> <span class="o">+</span> <span class="n">titres_colonnes</span> <span class="o">+</span> <span class="n">data_str</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">contenu_fichier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Résultats d&#39;expérience
+======================
+Angle d&#39;incidence (deg.)        Incertitude (deg.)     Angle réfracté (deg.)        Incertitude (deg.)
+                   10.67,                     1.50,                     8.54,                     1.30
+                   20.67,                     1.50,                    15.08,                     1.30
+                   30.67,                     1.50,                    21.37,                     1.30
+                   40.67,                     1.50,                    27.27,                     1.30
+                   50.67,                     1.50,                    32.61,                     1.30
+                   60.67,                     1.50,                    37.16,                     1.30
+                   70.67,                     1.50,                    40.69,                     1.30
+                   80.67,                     1.50,                    42.93,                     1.30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># écriture des données dans un fichier &#39;Pratibha.txt&#39;</span>
+<span class="n">nom_du_fichier</span> <span class="o">=</span> <span class="s1">&#39;Pratibha.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="n">nom_du_fichier</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span><span class="n">contenu_fichier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chargement-des-donnees-depuis-des-fichiers">
+<h2>Chargement des données depuis des fichiers<a class="headerlink" href="#chargement-des-donnees-depuis-des-fichiers" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ouverture/lecture du fichier de données</span>
+<span class="n">nom_du_fichier</span> <span class="o">=</span> <span class="s1">&#39;Ingrid.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="n">nom_du_fichier</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span> <span class="p">()</span>
+<span class="n">lignes</span> <span class="o">=</span> <span class="n">contenu</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Le fichier </span><span class="si">{</span><span class="n">nom_du_fichier</span><span class="si">}</span><span class="s1"> contient </span><span class="si">{</span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">lignes</span><span class="p">)</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> lignes.&#39;</span><span class="p">)</span>
+<span class="n">lignes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le fichier Ingrid.txt contient 12 lignes.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;Résultats d&#39;expérience&quot;,
+ &#39;======================&#39;,
+ &quot;Angle d&#39;incidence (deg.)        Incertitude (deg.)     Angle réfracté (deg.)        Incertitude (deg.)&quot;,
+ &#39;                   11.20,                     3.00,                     6.75,                     2.50&#39;,
+ &#39;                   23.37,                     3.00,                    13.93,                     2.50&#39;,
+ &#39;                   30.53,                     3.00,                    22.44,                     2.50&#39;,
+ &#39;                   45.33,                     3.00,                    27.57,                     2.50&#39;,
+ &#39;                   50.56,                     3.00,                    34.07,                     2.50&#39;,
+ &#39;                   62.12,                     3.00,                    37.49,                     2.50&#39;,
+ &#39;                   67.93,                     3.00,                    41.50,                     2.50&#39;,
+ &#39;                   79.42,                     3.00,                    40.69,                     2.50&#39;,
+ &#39;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="lecture-des-lignes">
+<h3>Lecture des lignes<a class="headerlink" href="#lecture-des-lignes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suppression des espaces</span>
+<span class="n">lignes</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11.20,3.00,6.75,2.50&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># séparation des colonnes par le caractère &#39;,&#39;</span>
+<span class="n">ligne</span> <span class="o">=</span> <span class="n">lignes</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">ligne</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;11.20&#39;, &#39;3.00&#39;, &#39;6.75&#39;, &#39;2.50&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># conversion des chaînes de caractères en réel</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span> <span class="o">=</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11.2, 3.0, 6.75, 2.5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">ligne</span> <span class="o">=</span> <span class="n">lignes</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span> <span class="o">=</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span><span class="p">))</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(11.2, 3.0, 6.75, 2.5),
+ (23.37, 3.0, 13.93, 2.5),
+ (30.53, 3.0, 22.44, 2.5),
+ (45.33, 3.0, 27.57, 2.5),
+ (50.56, 3.0, 34.07, 2.5),
+ (62.12, 3.0, 37.49, 2.5),
+ (67.93, 3.0, 41.5, 2.5),
+ (79.42, 3.0, 40.69, 2.5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reconditionnement des données en colonnes pour affichage graphique</span>
+<span class="n">xi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span> <span class="o">=</span> <span class="nb">tuple</span> <span class="p">(</span><span class="nb">zip</span> <span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">))</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;delta_x = &#39;</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;delta_y = &#39;</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  (11.2, 23.37, 30.53, 45.33, 50.56, 62.12, 67.93, 79.42)
+delta_x =  (3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0)
+y =  (6.75, 13.93, 22.44, 27.57, 34.07, 37.49, 41.5, 40.69)
+delta_y =  (2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ouverture/lecture du fichier de données</span>
+<span class="n">nom_du_fichier</span> <span class="o">=</span> <span class="s1">&#39;Pratibha.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path2data</span> <span class="o">+</span> <span class="n">nom_du_fichier</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span> <span class="p">()</span>
+<span class="n">lignes</span> <span class="o">=</span> <span class="n">contenu</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Le fichier </span><span class="si">{</span><span class="n">nom_du_fichier</span><span class="si">}</span><span class="s1"> contient </span><span class="si">{</span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">lignes</span><span class="p">)</span><span class="si">:</span><span class="s1">d</span><span class="si">}</span><span class="s1"> lignes.&#39;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">ligne</span> <span class="o">=</span> <span class="n">lignes</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span> <span class="o">=</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span> <span class="p">(</span><span class="n">ligne</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">delta_y</span><span class="p">))</span>
+
+<span class="c1"># reconditionnement des données en colonnes pour affichage graphique</span>
+<span class="n">xp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span> <span class="o">=</span> <span class="nb">tuple</span> <span class="p">(</span><span class="nb">zip</span> <span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">))</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;delta_x = &#39;</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">yp</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;delta_y = &#39;</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le fichier Pratibha.txt contient 12 lignes.
+x =  (10.67, 20.67, 30.67, 40.67, 50.67, 60.67, 70.67, 80.67)
+delta_x =  (1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5)
+y =  (8.54, 15.08, 21.37, 27.27, 32.61, 37.16, 40.69, 42.93)
+delta_y =  (1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="trace-de-figure-figure-axes">
+<h2>Tracé de figure : figure + axes<a class="headerlink" href="#trace-de-figure-figure-axes" title="Link to this heading">#</a></h2>
+<p>Il existe de très nombreuses façons de créer une figure <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> et d’y tracer un graphe.
+Voici celle qui permet de couvrir le plus grand nombre de cas de figure tout en donnant un accès direct à toutes les propriétés.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#création d&#39;une figure vide</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/45816d171484af6f5b3de210bb3ae3d5c2ef9ecbcb6905647d8f0d99ce65e1a7.png" src="../_images/45816d171484af6f5b3de210bb3ae3d5c2ef9ecbcb6905647d8f0d99ce65e1a7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a9eae0da82a44b80800d8a4073bfd8f1ee442b85bb26acfff23036919384322c.png" src="../_images/a9eae0da82a44b80800d8a4073bfd8f1ee442b85bb26acfff23036919384322c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tracé en ligne brisée</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0c9be0e1ce3c7e8f19750aba90d1b32eb06efb13d39fba25824f9c4f5fd4bc31.png" src="../_images/0c9be0e1ce3c7e8f19750aba90d1b32eb06efb13d39fba25824f9c4f5fd4bc31.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ajout des points expérimentaux</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+        <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d96581da2b5ff064dc5dd88a529a7e6974dbf05552bbe5be7343376ba56eda7f.png" src="../_images/d96581da2b5ff064dc5dd88a529a7e6974dbf05552bbe5be7343376ba56eda7f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage des barres d&#39;erreur suivant y</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a2e62c887f52ba4e7998ef14b72d416c0e052c52e0ab1d82561904f517a0427f.png" src="../_images/a2e62c887f52ba4e7998ef14b72d416c0e052c52e0ab1d82561904f517a0427f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage des barres d&#39;erreur suivant x</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4e0ad5a14c010ddf27a32609cd642a9582794a0cdeac5abe8c6eea0a6db872a6.png" src="../_images/4e0ad5a14c010ddf27a32609cd642a9582794a0cdeac5abe8c6eea0a6db872a6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage de plusieurs courbes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9421dce4dbba12052a512c97abbe2a9ba4cfddd0e530151e3c55222a4dde4c79.png" src="../_images/9421dce4dbba12052a512c97abbe2a9ba4cfddd0e530151e3c55222a4dde4c79.png" />
+</div>
+</div>
+</section>
+<section id="figure-multi-graphe">
+<h2>Figure multi-graphe<a class="headerlink" href="#figure-multi-graphe" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage de plusieurs courbes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="c1"># attributs communs à tous les graphes</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+
+<span class="c1"># attributs de la figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span> <span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b94797548e81e05688d0ba1bbbd05ebbe3a27e3a8305d6422f5100dd063240da.png" src="../_images/b94797548e81e05688d0ba1bbbd05ebbe3a27e3a8305d6422f5100dd063240da.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage de plusieurs courbes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">))</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="c1"># attributs communs à tous les graphes</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+
+<span class="c1"># attributs de la figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span> <span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a25809fb7cf803c9698ec3606257773f6220ee42786b6f30431797e93ce71450.png" src="../_images/a25809fb7cf803c9698ec3606257773f6220ee42786b6f30431797e93ce71450.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage de plusieurs courbes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.4</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">))</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">axes</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="c1"># attributs communs à tous les graphes</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+
+<span class="c1"># attributs de la figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span> <span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a805593f52e7992ff5782fbbcb1a1c88407d9e2c261044943784a180df9deb33.png" src="../_images/a805593f52e7992ff5782fbbcb1a1c88407d9e2c261044943784a180df9deb33.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="twinx">
+<h1>twinx()<a class="headerlink" href="#twinx" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># affichage de plusieurs courbes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">,</span>
+             <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.) - Ingrid&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">axT</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span> <span class="p">()</span>
+
+<span class="n">ypprime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(</span><span class="n">yp</span><span class="p">)</span>
+<span class="n">axT</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">ypprime</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">,</span>
+             <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">axT</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.) - Pratibha&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/39aebe7f0698fac8bbeb532139cf9a1df33e06dee4829f12d734f46c1882bb04.png" src="../_images/39aebe7f0698fac8bbeb532139cf9a1df33e06dee4829f12d734f46c1882bb04.png" />
+</div>
+</div>
+<section id="recreation">
+<h2>Récréation<a class="headerlink" href="#recreation" title="Link to this heading">#</a></h2>
+<p>Combiner les paramètres de style pour produire la figure du meilleur goût.
+Cherchez l’inspiration dans les documentations
+<a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">matplotlib markers</a>
+et
+<a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">matplotlib colors</a>.</p>
+<p>Inscrivez votre nom, sauvegardez votre chef-d’oeuvre avec la méthode <code class="docutils literal notranslate"><span class="pre">fig.savefig()</span></code> et déposez-le sur <a class="reference external" href="https://ecampus.paris-saclay.fr/mod/assign/view.php?id=2371357">eCampus</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tuning !!!!</span>
+<span class="n">path2output</span> <span class="o">=</span> <span class="s1">&#39;output/&#39;</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">Ingrid_style</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markersize&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;markerfacecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markeredgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="c1"># error bar style</span>
+    <span class="s1">&#39;capsize&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;capthick&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="n">Pratibha_style</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markersize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;markerfacecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markeredgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;crimson&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">.3</span><span class="p">,</span>
+    <span class="c1"># error bar style</span>
+    <span class="s1">&#39;capsize&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;capthick&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="o">**</span><span class="n">Ingrid_style</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="o">**</span><span class="n">Pratibha_style</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="n">mon_nom</span> <span class="o">=</span> <span class="s1">&#39;Rembrandt_Harmenszoon_van_Rijn&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">mon_nom</span><span class="p">,</span> <span class="n">fontstyle</span> <span class="o">=</span> <span class="s1">&#39;italic&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span> <span class="p">(</span><span class="n">path2output</span> <span class="o">+</span> <span class="n">mon_nom</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3152ea66e566373bed5ecb3c146b7f8570a9e0903e010215dd59c70b62ef34c4.png" src="../_images/3152ea66e566373bed5ecb3c146b7f8570a9e0903e010215dd59c70b62ef34c4.png" />
+</div>
+</div>
+</section>
+<section id="attributs-d-une-figure">
+<h2>Attributs d’une figure<a class="headerlink" href="#attributs-d-une-figure" title="Link to this heading">#</a></h2>
+<p>Dans la pratique, le choix des paramètres des courbes est dicté deux critères :</p>
+<ul class="simple">
+<li><p>la lisibilité (tailles des polices, compatibilité monochrome, daltonien, <em>etc.</em>)</p></li>
+<li><p>les attributs de la courbe doivent mettre en valeur le message de la figure (taille du point vs. incertitude, échelle, <em>etc.</em>)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Je veux montrer que les valeurs sont petites</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span> <span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e581340978250607e8c69bba0249a545b3c701f8b2888118c929dd8db01d2eed.png" src="../_images/e581340978250607e8c69bba0249a545b3c701f8b2888118c929dd8db01d2eed.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Je veux montrer que la variation est faible</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span> <span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span> <span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/45a99b8b303ad7a620063f0abbc1df3a1581813573e4a83b22f6ebb0bc04cb10.png" src="../_images/45a99b8b303ad7a620063f0abbc1df3a1581813573e4a83b22f6ebb0bc04cb10.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Je connais les barres d&#39;erreurs mais je ne veux pas les afficher (avec bonne foi)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">lstyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">lwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span> <span class="p">(</span><span class="s1">&#39;Mise en évidence de la loi de Snell-Descartes&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span> <span class="p">(</span><span class="s2">&quot;Angle d&#39;incidence (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span> <span class="p">(</span><span class="s2">&quot;Angle de réfraction dans le verre (deg.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_xi</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ingrid&#39;</span><span class="p">,</span>
+            <span class="n">markersize</span> <span class="o">=</span> <span class="mi">28</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="n">delta_xp</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="n">lstyle</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="n">lwidth</span><span class="p">,</span>
+             <span class="n">capsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">capthick</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pratibha&#39;</span><span class="p">,</span>
+            <span class="n">markersize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span> <span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3a4910c5d6626a7cbeedf264e088d324283598c60cbc6932312c3d8950970546.png" src="../_images/3a4910c5d6626a7cbeedf264e088d324283598c60cbc6932312c3d8950970546.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="brouillon">
+<h1>Brouillon<a class="headerlink" href="#brouillon" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">,</span> <span class="mf">70.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">6.65</span><span class="p">,</span> <span class="mf">13.18</span><span class="p">,</span> <span class="mf">19.47</span><span class="p">,</span> <span class="mf">25.37</span><span class="p">,</span> <span class="mf">30.71</span><span class="p">,</span> <span class="mf">35.26</span><span class="p">,</span> <span class="mf">38.79</span><span class="p">,</span> <span class="mf">41.04</span><span class="p">)</span>
+<span class="p">]</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span> <span class="p">(</span><span class="n">n1</span> <span class="o">/</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">(</span><span class="n">x1</span> <span class="o">*</span> <span class="n">deg2rad</span><span class="p">))</span> <span class="o">/</span> <span class="n">deg2rad</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1œ</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Génération des donnéess</span>
+<span class="c1"># param physiques</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="n">deg2rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span> <span class="p">(</span><span class="n">n1</span> <span class="o">/</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">deg2rad</span><span class="p">))</span> <span class="o">/</span> <span class="n">deg2rad</span>
+
+<span class="c1"># Ingrid</span>
+<span class="n">delta_yi</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span><span class="mf">.06</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">yi</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_yi</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Pratibha</span>
+<span class="n">delta_yp</span> <span class="o">=</span> <span class="nb">max</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span><span class="mf">.03</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">yp</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">delta_yp</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span> <span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta_yi</span><span class="p">,</span> <span class="n">delta_yp</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "josephscola/PH461",
+            ref: "gh-pages/",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapitre2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chaînes de caractères</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-chaine-de-caractere-est-un-type-de-variables">La chaîne de caractère est un type de variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteres-de-commande">Caractères de commande</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majuscules">Majuscules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation-de-chaines-de-caracteres">Concaténation de chaînes de caractères</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace">Replace()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count">Count()</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-numeriques">Données numériques</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affichage-formatte-f-string">Affichage formatté : f-string</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-ecriture-de-fichiers">Lecture/écriture de fichiers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-de-fichier">Création de fichier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-de-fichier">Lecture de fichier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representations-graphiques">Représentations graphiques</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-des-fichiers-de-donnees">Création des fichiers de données</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chargement-des-donnees-depuis-des-fichiers">Chargement des données depuis des fichiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-des-lignes">Lecture des lignes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trace-de-figure-figure-axes">Tracé de figure : figure + axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-multi-graphe">Figure multi-graphe</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#twinx">twinx()</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recreation">Récréation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributs-d-une-figure">Attributs d’une figure</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#brouillon">Brouillon</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. Scola
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
